@@ -1,15 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { EpisodeComponent } from './shared/components/EpisodeComponent';
+import { Episode1View } from './episode1/view/Episode1View';
 
 function App() {
   return (
     <div className="App">
-      <EpisodeComponent
-        title="Test"
-        source="https://player.vimeo.com/video/76979871"
-      />
+      <Episode1View/>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

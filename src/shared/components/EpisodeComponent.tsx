@@ -7,21 +7,13 @@ type IEpisodeComponentProps = {
 
 const EpisodeComponentStyle: CSSProperties = {
     display: "flex",
+    flex: "1 1 auto",
     width: "100%",
     height: "100%",
     flexDirection: "column",
-    backgroundColor: "blue",
     overflow: "hidden",
     padding: "5px"
 }
-// {
-//     display: "flex",
-//     width: "100%",
-//     height: "100%",
-//     flex-direction: "column",
-//     background-color: "blue",
-//     overflow: "hidden"
-// }
 
 export function EpisodeComponent(props: IEpisodeComponentProps) {
     return (
@@ -32,7 +24,7 @@ export function EpisodeComponent(props: IEpisodeComponentProps) {
                 src={props.source}
                 frameBorder={'0'}
                 allowFullScreen
-
+                
             />
         </div>
     );
