@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+.Episode-One {
+  color: gold;
+}
+
+button.Episode-One {
+  background-color: transparent;
+  border: 3px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px;
+  outline: transparent;
+}
+
+button.Episode-One:hover {
+  background-color: black;
+  border: 3px solid transparent;
+  color: gold;
+}
+
+button.Episode-One:focus {
+  background-color: black;
+  border: 3px solid transparent;
+  color: gold;
+}
