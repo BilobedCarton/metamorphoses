@@ -82,10 +82,10 @@ export function Episode1View(props: any) {
                     {renderAllAnswers()}
                     <div>
                         <button className={"Episode-One"}
-                            onClick={() => {history.push("1/answers")}}
+                            onClick={() => {history.push("episode-1/answers")}}
                         > See What Other People Answered </button>
                         <button className={"Episode-One"} 
-                            onClick={() => {history.push("2")}}
+                            onClick={() => {history.push("episode-2")}}
                         > Next Episode </button>
                     </div>
                 </div>
