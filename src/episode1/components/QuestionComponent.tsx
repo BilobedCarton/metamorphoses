@@ -1,4 +1,5 @@
 import React from "react";
+import { AutoSizeTextAreaComponent } from "../../shared/components/AutoSizeTextAreaComponent";
 
 type IQuestionComponentProps = {
     textStyle: React.CSSProperties
@@ -15,11 +16,17 @@ export function QuestionComponent(props: IQuestionComponentProps) {
     return (
         <div style={QuestionComponentStyle}>
             <p>{props.question}</p>
-            <textarea 
+            <AutoSizeTextAreaComponent
+                style={props.textStyle}
+                value={props.answer}
+                onValueChanged={props.onAnswerChanged}
+            />
+            {/* <textarea 
+                rows={1}
                 style={props.textStyle}
                 value={props.answer} 
                 onChange={(event) => props.onAnswerChanged(event.target.value)}
-            />
+            /> */}
         </div>
     );
 }

@@ -65,13 +65,13 @@ export function Episode1View(props: any) {
                     {renderCurrentQuestion()}
                     <div>
                         {currentQuestion !== 0 
-                            ? <button className={"Episode-One"} 
+                            ? <button className={"Episode-One "} 
                                 onClick={() => {
                                     setCurrentQuestion(Math.max(0, currentQuestion - 1))
                                 }}>Previous</button> 
                             : null
                         }
-                        <button className={"Episode-One"} 
+                        <button className={"Episode-One"}
                             onClick={() => {
                                 setCurrentQuestion(currentQuestion + 1)
                             }}
@@ -81,8 +81,12 @@ export function Episode1View(props: any) {
                 : <div>
                     {renderAllAnswers()}
                     <div>
-                        <button className={"Episode-One"} onClick={() => {history.push("1/answers")}}> See What Other People Answered </button>
-                        <button className={"Episode-One"} onClick={() => {history.push("2")}}> Next Episode </button>
+                        <button className={"Episode-One"}
+                            onClick={() => {history.push("1/answers")}}
+                        > See What Other People Answered </button>
+                        <button className={"Episode-One"} 
+                            onClick={() => {history.push("2")}}
+                        > Next Episode </button>
                     </div>
                 </div>
             }

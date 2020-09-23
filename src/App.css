@@ -50,7 +50,7 @@ button.Episode-One {
   text-decoration: none;
   display: inline-block;
   margin: 5px;
-  outline: transparent;
+  outline: none;
 }
 
 button.Episode-One:hover {
