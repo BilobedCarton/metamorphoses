@@ -4,8 +4,8 @@ import { Route, Switch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import { Episode1View } from './episode1/view/Episode1View';
+import { Episode2View } from './episode2/Episode2View';
 import { HubView } from './hub/HubView';
-import { BackgroundVideoComponent } from './shared/components/BackgroundVideoComponent';
 
 const ep1 = require("./assets/ep1.mp4");
 
@@ -27,7 +27,7 @@ function App() {
               <Episode1View/>
             </Route>
             <Route exact path={"/episode-two"}>
-              <p>Episode 2</p>
+              <Episode2View/>
             </Route>
             <Route exact path={"/episode-three"}>
               <p>Episode 3</p>

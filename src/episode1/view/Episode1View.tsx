@@ -17,8 +17,9 @@ const Q_STR_ARR = [
 ];
 
 export function Episode1View(props: any) {
-    const [currentQuestion, setCurrentQuestion] = useState(0);
+    const [currentQuestion, setCurrentQuestion] = useState(2);
     const [answers, setAnswers] = useState(["", "", ""]);
+    const [share, setShare] = useState(true);
 
     const history = useHistory();
 
@@ -77,19 +78,34 @@ export function Episode1View(props: any) {
                             }}
                         >{currentQuestion !== 2 ? "Next" : "Finish"}</button>
                     </div>
+                    { currentQuestion === 2 
+                        ? <div style={{ display: "inline-block" }}>
+                            <label>
+                                <input className={"Episode-One"} type="checkbox" checked={share} onChange={
+                                    (event) => setShare(event.target.checked)
+                                }/> 
+                                Share with other audience members
+                            </label>
+                        </div> : null
+                    }
                 </div>
                 : <div>
                     {renderAllAnswers()}
                     <div>
                         <button className={"Episode-One"}
-                            onClick={() => {history.push("episode-1/answers")}}
+                            onClick={() => {history.push("episode-one/answers")}}
                         > See What Other People Answered </button>
-                        <button className={"Episode-One"} 
-                            onClick={() => {history.push("episode-2")}}
-                        > Next Episode </button>
                     </div>
                 </div>
             }
+            <button className={"Episode-One"}
+                style={{ position: "fixed", bottom: "5vh", left: "5vw" }}
+                onClick={() => history.push("/")}
+            > Hub </button>
+            <button className={"Episode-One"}
+                style={{ position: "fixed", bottom: "5vh", right: "5vw" }}
+                onClick={() => history.push("/episode-two")}
+            > Episode 2 </button>
         </div>
     );
 }
