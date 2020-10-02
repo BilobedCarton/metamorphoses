@@ -41,7 +41,8 @@
   color: gold;
 }
 
-button.Episode-One {
+button.Episode-One, button.Episode-Two {
+  font-size: medium;
   background-color: transparent;
   border: 3px solid black;
   color: black;
@@ -53,13 +54,39 @@ button.Episode-One {
   outline: none;
 }
 
+button.Episode-Two {
+  background-color: darkmagenta;
+  opacity: 75%;
+}
+
 button.Episode-One:hover, button.Episode-One:focus {
   background-color: black;
   border: 3px solid transparent;
   color: gold;
 }
 
-input[type="checkbox"].Episode-One {
+button.Episode-Two:hover, button.Episode-Two:focus, input[type="text"].Episode-Two:hover, input[type="text"].Episode-Two:focus {
+  background-color: black;
+  border: 3px solid transparent;
+  color: green;
+}
+
+::placeholder {
+  color: black;
+}
+
+input[type="text"].Episode-Two {
+  color: black;
+  padding: 8px 16px;
+  margin: 8px;
+  border: 3px solid black;
+  background-color: darkmagenta;
+  opacity: 75%;
+  font-size: 18px;
+  outline: none;
+}
+ 
+input[type="checkbox"] {
   content: '';
   outline: none;
   border: 3px solid black;

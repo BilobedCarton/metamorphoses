@@ -7,9 +7,6 @@ import { Episode1View } from './episode1/view/Episode1View';
 import { Episode2View } from './episode2/Episode2View';
 import { HubView } from './hub/HubView';
 
-const ep1 = require("./assets/ep1.mp4");
-
-
 function App() {
 
   return (
