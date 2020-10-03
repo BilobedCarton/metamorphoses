@@ -14,7 +14,7 @@ export const Ep2ImageComponent = (props: IEp2ImageComponentProps) => {
 
     return (
         <div style={{ display: "inline" }}>
-            <p>Hello there</p>
+            <img src={props.src} alt={"Hello there"} style={{ width: "250px" }}/>
             { !done ?
                 <div>
                     <div>
