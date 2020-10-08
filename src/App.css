@@ -41,7 +41,7 @@
   color: gold;
 }
 
-button.Episode-One, button.Episode-Two {
+button.Episode {
   font-size: medium;
   background-color: transparent;
   border: 3px solid black;
@@ -69,6 +69,16 @@ button.Episode-Two:hover, button.Episode-Two:focus, input[type="text"].Episode-T
   background-color: black;
   border: 3px solid transparent;
   color: green;
+}
+
+button.Episode-Five {
+  background-color: rgb(255, 115, 0);
+  border: 3px solid rgb(255, 115, 0);
+}
+
+button.Episode-Five:hover, button.Episode-Five:focus {
+  background-color: black;
+  color: rgb(255, 115, 0);
 }
 
 ::placeholder {

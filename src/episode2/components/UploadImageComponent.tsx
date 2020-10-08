@@ -19,7 +19,7 @@ export const UploadImageComponent = (props: IUploadImageComponentProps) => {
                 accept="image/*"
                 style={{ display:"none" }}
             />
-            <button className={"Episode-Two"} style={{width: "180px"}} onClick={() => imageUploader!.current!.click()}>
+            <button className={"Episode Episode-Two"} style={{width: "180px"}} onClick={() => imageUploader!.current!.click()}>
                 <p>Show us your <b>NIGHTMARE</b></p>
             </button>
         </div>

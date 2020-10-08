@@ -1,10 +1,13 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import { Episode1View } from './episode1/view/Episode1View';
 import { Episode2View } from './episode2/Episode2View';
+import { Episode3View } from './episode3/Episode3View';
+import { Episode4View } from './episode4/Episode4View';
+import { Episode5View } from './episode5/Episode5View';
 import { HubView } from './hub/HubView';
 
 function App() {
@@ -27,13 +30,13 @@ function App() {
               <Episode2View/>
             </Route>
             <Route exact path={"/episode-three"}>
-              <p>Episode 3</p>
+              <Episode3View/>
             </Route>
             <Route exact path={"/episode-four"}>
-              <p>Episode 4</p>
+              <Episode4View/>
             </Route>
             <Route exact path={"/episode-five"}>
-              <p>Episode 5</p>
+              <Episode5View/>
             </Route>
             <Route exact path={"/episode-six"}>
               <p>Episode 6</p>

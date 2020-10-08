@@ -1,10 +1,10 @@
 import React from "react";
 
-type IBackgroundVideoComponentProps = {
+type IBackgroundComponentProps = {
     src: any;
 }
 
-const BackgroundVideoComponentStyle: React.CSSProperties = {
+const BackgroundComponentStyle: React.CSSProperties = {
     position: "fixed", 
     top: "-50%", 
     left: "-50%", 
@@ -13,11 +13,17 @@ const BackgroundVideoComponentStyle: React.CSSProperties = {
     zIndex: -99
 }
 
-export function BackgroundVideoComponent(props: IBackgroundVideoComponentProps) {
+export function BackgroundVideoComponent(props: IBackgroundComponentProps) {
     return (
-        <video autoPlay muted loop style={BackgroundVideoComponentStyle}>
+        <video autoPlay muted loop style={BackgroundComponentStyle}>
             <source src={props.src} type="video/mp4"/>
             Your browser does not support HTML5 video
         </video>
+    )
+}
+
+export function BackgroundImageComponent(props: IBackgroundComponentProps) {
+    return (
+        <img style={{...BackgroundComponentStyle, backgroundColor: "black"}} src={props.src} alt=""/>
     )
 }

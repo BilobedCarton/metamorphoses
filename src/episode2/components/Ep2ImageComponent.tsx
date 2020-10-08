@@ -36,7 +36,7 @@ export const Ep2ImageComponent = (props: IEp2ImageComponentProps) => {
                     </div>
                     <div>
                         <button 
-                            className="Episode-Two" 
+                            className="Episode Episode-Two" 
                             style={{ marginTop: "10px" }}
                             onClick={() => { props.onClickDone(); setDone(true) }}
                         > Finish </button>
