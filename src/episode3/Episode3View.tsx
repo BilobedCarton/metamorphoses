@@ -1,7 +1,7 @@
 import React from "react";
 import { EpisodeComponent } from "../shared/components/EpisodeComponent";
 
-const background = require("../assets/black.png");
+const background = require("../assets/ep3.mp4");
 
 export const Episode3View = (props: any) => {
 

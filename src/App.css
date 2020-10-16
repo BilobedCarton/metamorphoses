@@ -71,6 +71,24 @@ button.Episode-Two:hover, button.Episode-Two:focus, input[type="text"].Episode-T
   color: green;
 }
 
+button.Episode-Three:hover, button.Episode-Three:focus {
+  color: beige;
+  border: 3px solid beige;
+}
+
+button.Episode-Four {
+  color: pink;
+  background-color: darkred;
+  border: 3px solid pink;
+  opacity: 75%;
+}
+
+button.Episode-Four:hover, button.Episode-Four:focus {
+  background-color: pink;
+  color: darkred;
+  border: 3px solid darkred;
+}
+
 button.Episode-Five {
   background-color: rgb(255, 115, 0);
   border: 3px solid rgb(255, 115, 0);
