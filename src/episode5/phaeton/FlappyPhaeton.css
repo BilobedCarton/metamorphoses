@@ -1,0 +1,43 @@
+.game-container {
+    width: 700px;
+    height: 500px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -350px;
+}
+
+.sky {
+    background-color: darkorange;
+    width: 700px;
+    height: 500px;
+    position: absolute;
+}
+
+.boundary {
+    background-color: black;
+    width: 700px;
+    height: 50px;
+    position: absolute;
+}
+
+.bird {
+    background-color: black;
+    position: absolute;
+    width: 20px;
+    height:  20px;
+}
+
+.game-overlay {
+    background-color: transparent;
+}
+
+.victory-display {
+    color: black;
+    text-align: center;
+    font-size: x-large;
+    top: 50%;
+    left: 30%;
+    position: absolute;
+}

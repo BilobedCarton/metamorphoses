@@ -8,6 +8,7 @@ import { Episode2View } from './episode2/Episode2View';
 import { Episode3View } from './episode3/Episode3View';
 import { Episode4View } from './episode4/Episode4View';
 import { Episode5View } from './episode5/Episode5View';
+import { FlappyPhaetonView } from './episode5/phaeton/FlappyPhaetonView';
 import { HubView } from './hub/HubView';
 
 function App() {
@@ -40,6 +41,9 @@ function App() {
             </Route>
             <Route exact path={"/episode-six"}>
               <p>Episode 6</p>
+            </Route>
+            <Route exact path={"/phaeton"}>
+              <FlappyPhaetonView/>
             </Route>
           </Switch>
         </BrowserRouter>
