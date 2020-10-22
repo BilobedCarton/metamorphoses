@@ -51,9 +51,9 @@ export const FlappyPhaetonView = (props: any) => {
     function generateObstacle() {
         let height = Math.floor(Math.random() * 300) + 60;
         setObstacleList((list) => {
-            let newList = list;
+            if(list.length === 6) return list;
+            let newList = [...list];
             newList.push(height);
-            console.log(newList);
             return newList
         })
     }
@@ -61,12 +61,9 @@ export const FlappyPhaetonView = (props: any) => {
     function animationTick() {
         if(gameStopped) return;
         setFrame((frame) => {
-            console.log(frame)
             return frame + 1;
         });
-        if(obstacleList.length < 6 && frame % 20 === 0) {
-            generateObstacle();
-        }
+        generateObstacle();
         setBirdState((bird) => {
             let { x, y, v } = bird;
 
