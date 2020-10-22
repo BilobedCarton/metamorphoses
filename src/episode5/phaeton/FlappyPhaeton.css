@@ -9,7 +9,7 @@
 }
 
 .sky {
-    background-color: darkorange;
+    background-color: rgb(255, 115, 0);
     width: 700px;
     height: 500px;
     position: absolute;
@@ -40,4 +40,22 @@
     top: 50%;
     left: 30%;
     position: absolute;
+}
+
+.obstacle {
+    width: 50px;
+    position: absolute;
+    background-color: transparent;
+    border: 3px solid black;
+}
+
+.obstacle-text {
+    font-size: medium;
+    font-weight: bold;
+    transform: rotate(-90deg);
+}
+
+.obstacle-container {
+    position: absolute;
+    top: 0px;
 }

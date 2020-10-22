@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
+import { BackgroundVideoComponent } from "../../shared/components/BackgroundVideoComponent";
+import { ObstacleComponent } from "./components/ObstacleComponent";
 import { PhaetonComponent } from "./components/PhaetonComponent";
 import "./FlappyPhaeton.css";
+
+const background = require("../../assets/ep5.mp4");
 
 type IBirdState = {
     x: number,
@@ -10,7 +14,7 @@ type IBirdState = {
 }
 
 enum PlayerVictoryStatus {
-    Win = 1,
+    Start = 1,
     InProgress = 0,
     Loss = -1
 
@@ -29,8 +33,10 @@ const startingBirdState: IBirdState = {
 
 export const FlappyPhaetonView = (props: any) => {
     const [ gameStopped, setGameStopped ] = useState(true);
-    const [ playerVictoryStatus, setPlayerVictoryStatus ] = useState<PlayerVictoryStatus>(PlayerVictoryStatus.InProgress);
+    const [ playerVictoryStatus, setPlayerVictoryStatus ] = useState<PlayerVictoryStatus>(PlayerVictoryStatus.Start);
     const [ birdState, setBirdState ] = useState<IBirdState>(startingBirdState);
+    const [ obstacleList, setObstacleList ] = useState<number[]>([]);
+    const [ frame, setFrame ] = useState(0);
 
     const history = useHistory();
 
@@ -42,8 +48,25 @@ export const FlappyPhaetonView = (props: any) => {
         return false;
     }
 
+    function generateObstacle() {
+        let height = Math.floor(Math.random() * 300) + 60;
+        setObstacleList((list) => {
+            let newList = list;
+            newList.push(height);
+            console.log(newList);
+            return newList
+        })
+    }
+
     function animationTick() {
         if(gameStopped) return;
+        setFrame((frame) => {
+            console.log(frame)
+            return frame + 1;
+        });
+        if(obstacleList.length < 6 && frame % 20 === 0) {
+            generateObstacle();
+        }
         setBirdState((bird) => {
             let { x, y, v } = bird;
 
@@ -92,10 +115,21 @@ export const FlappyPhaetonView = (props: any) => {
         setPlayerVictoryStatus(PlayerVictoryStatus.Loss);
     }
 
+    const getVictoryStatusText = (status: PlayerVictoryStatus) => {
+        switch(status) {
+            case PlayerVictoryStatus.Start:
+                return "Press space to begin.";
+            case PlayerVictoryStatus.Loss:
+                return "You lost... press space to try again.";
+            case PlayerVictoryStatus.InProgress:
+            default:
+                return "";
+        }
+    }
+
     return (
         <div style={{ width: "100vw", height: "100vh", backgroundColor: "black" }} tabIndex={0} onKeyDown={(ev) => {
             // console.log(ev.key);
-            
             if(ev.key === " " && !gameStopped) {
                 jump();
             } else if(ev.key === " ") {
@@ -103,6 +137,7 @@ export const FlappyPhaetonView = (props: any) => {
                 setPlayerVictoryStatus(PlayerVictoryStatus.InProgress);
             }
         }}>
+        
             <button 
                 className="Episode Episode-Five" 
                 onClick={() => history.push("/episode-five")}
@@ -110,11 +145,20 @@ export const FlappyPhaetonView = (props: any) => {
             > Quit </button>
             <div className="game-container" style={{alignContent: "center"}}>
                 <div className="sky" style={{ top: "0px" }}>
+                <video autoPlay muted loop style={{ objectFit: "fill", width: "100%", height: "130%", marginTop: "-11%" }}>
+                    <source src={background} type="video/mp4"/>
+                    Your browser does not support HTML5 video
+                </video>`
                     <PhaetonComponent posX={birdState.x} posY={birdState.y}/>
+                    {obstacleList.map((y, i) => {
+                        return (
+                            <ObstacleComponent x={250 + i * 150} y={y} key={"obstacle-" + i} />
+                        )
+                    })}
                 </div>
             </div>
-            {playerVictoryStatus === PlayerVictoryStatus.Loss ? <div className="game-overlay game-container">
-                <b className="victory-display">You lost... press space to try again</b>
+            {playerVictoryStatus !== PlayerVictoryStatus.InProgress ? <div className="game-overlay game-container">
+                <b className="victory-display">{getVictoryStatusText(playerVictoryStatus)}</b>
             </div> : null}
         </div>
         
