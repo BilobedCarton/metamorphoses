@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { BackgroundVideoComponent } from "../../shared/components/BackgroundVideoComponent";
-import { ObstacleComponent } from "./components/ObstacleComponent";
+import { halfGapHeight, ObstacleComponent } from "./components/ObstacleComponent";
 import { PhaetonComponent } from "./components/PhaetonComponent";
 import "./FlappyPhaeton.css";
 
@@ -20,23 +20,26 @@ enum PlayerVictoryStatus {
 
 }
 
-const gravity = 6 / 60;
+const gravity = 1 / 60;
 const maxY = 480;
 const maxX = 680;
 const maxV = 8;
-const jumpV = -6;
+const jumpV = -1;
 const startingBirdState: IBirdState = {
     x: 100,
     y: 240,
     v: 0
 }
+const startingDist = 250;
+const horizSpeed = 1;
 
 export const FlappyPhaetonView = (props: any) => {
     const [ gameStopped, setGameStopped ] = useState(true);
     const [ playerVictoryStatus, setPlayerVictoryStatus ] = useState<PlayerVictoryStatus>(PlayerVictoryStatus.Start);
     const [ birdState, setBirdState ] = useState<IBirdState>(startingBirdState);
     const [ obstacleList, setObstacleList ] = useState<number[]>([]);
-    const [ frame, setFrame ] = useState(0);
+    const [ playerScore, setPlayerScore ] = useState(0);
+    const [ distanceToFirstObstacle, setDistanceToFirstObstacle ] = useState(startingDist - 50);
 
     const history = useHistory();
 
@@ -45,13 +48,20 @@ export const FlappyPhaetonView = (props: any) => {
         if(birdState.y === 0 || birdState.y === maxY) {
             return true;
         }
+        if(distanceToFirstObstacle <= 5 && distanceToFirstObstacle >= -50
+            && (birdState.y < obstacleList[0] - (halfGapHeight - 10)
+                || birdState.y + 30 > obstacleList[0] + halfGapHeight)
+        ) {
+            console.log(`y: ${birdState.y}, top: ${obstacleList[0] - (halfGapHeight - 10)}, bottom: ${obstacleList[0] + halfGapHeight}`)
+            return true; 
+        }
         return false;
     }
 
     function generateObstacle() {
         let height = Math.floor(Math.random() * 300) + 60;
         setObstacleList((list) => {
-            if(list.length === 6) return list;
+            if(list.length === 4) return list;
             let newList = [...list];
             newList.push(height);
             return newList
@@ -60,9 +70,6 @@ export const FlappyPhaetonView = (props: any) => {
 
     function animationTick() {
         if(gameStopped) return;
-        setFrame((frame) => {
-            return frame + 1;
-        });
         generateObstacle();
         setBirdState((bird) => {
             let { x, y, v } = bird;
@@ -81,6 +88,10 @@ export const FlappyPhaetonView = (props: any) => {
                 y,
                 v
             }
+        });
+        setDistanceToFirstObstacle((dist) => {
+            let newDist = dist - horizSpeed;
+            return newDist;
         });
     }
 
@@ -105,11 +116,25 @@ export const FlappyPhaetonView = (props: any) => {
             return () => clearInterval(t)
         }
     }, [gameStopped]);
+
+    if(distanceToFirstObstacle < -100) {
+        setObstacleList((ol) => {
+            const newOL = ol.slice(1);
+            return newOL;
+        })
+        setDistanceToFirstObstacle((dist) => {
+            return startingDist + dist;
+        })
+        setPlayerScore((s) => s + 1);
+    }
     
     if(checkCollision()) {
         setBirdState(startingBirdState);
         setGameStopped(true);
         setPlayerVictoryStatus(PlayerVictoryStatus.Loss);
+        setObstacleList([]);
+        setDistanceToFirstObstacle(startingDist);
+        setPlayerScore(0);
     }
 
     const getVictoryStatusText = (status: PlayerVictoryStatus) => {
@@ -149,7 +174,7 @@ export const FlappyPhaetonView = (props: any) => {
                     <PhaetonComponent posX={birdState.x} posY={birdState.y}/>
                     {obstacleList.map((y, i) => {
                         return (
-                            <ObstacleComponent x={250 + i * 150} y={y} key={"obstacle-" + i} />
+                            <ObstacleComponent x={birdState.x + distanceToFirstObstacle + i * 250} y={y} key={"obstacle-" + i} />
                         )
                     })}
                 </div>

@@ -6,8 +6,8 @@ type IObstacleComponentProps = {
     y: number;
 }
 
-const gapHeight = 100;
-const halfGapHeight = gapHeight / 2;
+const gapHeight = 150;
+export const halfGapHeight = gapHeight / 2;
 
 export const ObstacleComponent = (props: IObstacleComponentProps) => {
     const textTop = "1", textBottom = "2";
