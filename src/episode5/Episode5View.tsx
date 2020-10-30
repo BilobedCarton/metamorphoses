@@ -19,7 +19,7 @@ export const Episode5View = (props: any) => {
             <b style={{textAlign: "center", fontSize: "large"}}>
                 Can you beat:
                 <p style={{fontSize: "xx-large"}}><i>P H A E T O N ?</i></p>
-                <p> High Score: 3</p>
+                <p> High Score: 7</p>
             </b>
             <button 
                 className="Episode Episode-Five"

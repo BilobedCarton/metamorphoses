@@ -1,69 +1,52 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import { BackgroundVideoComponent } from "../../shared/components/BackgroundVideoComponent";
-import { halfGapHeight, ObstacleComponent } from "./components/ObstacleComponent";
+import { ObstacleComponent } from "./components/ObstacleComponent";
 import { PhaetonComponent } from "./components/PhaetonComponent";
+import { generateText, gravity, halfGapHeight, startingHorizSpeed, IBirdState, jumpV, maxV, maxX, maxY, PlayerVictoryStatus, startingBirdState, startingDist } from "./domain/PhaetonConstants";
 import "./FlappyPhaeton.css";
 
 const background = require("../../assets/ep5.mp4");
 
-type IBirdState = {
-    x: number,
-    y: number,
-    v: number,
+type IObstacleState = {
+    y: number;
+    top: string;
+    bottom: string;
 }
-
-enum PlayerVictoryStatus {
-    Start = 1,
-    InProgress = 0,
-    Loss = -1
-
-}
-
-const gravity = 1 / 60;
-const maxY = 480;
-const maxX = 680;
-const maxV = 8;
-const jumpV = -1;
-const startingBirdState: IBirdState = {
-    x: 100,
-    y: 240,
-    v: 0
-}
-const startingDist = 250;
-const horizSpeed = 1;
 
 export const FlappyPhaetonView = (props: any) => {
     const [ gameStopped, setGameStopped ] = useState(true);
     const [ playerVictoryStatus, setPlayerVictoryStatus ] = useState<PlayerVictoryStatus>(PlayerVictoryStatus.Start);
     const [ birdState, setBirdState ] = useState<IBirdState>(startingBirdState);
-    const [ obstacleList, setObstacleList ] = useState<number[]>([]);
+    const [ obstacleList, setObstacleList ] = useState<IObstacleState[]>([]);
     const [ playerScore, setPlayerScore ] = useState(0);
     const [ distanceToFirstObstacle, setDistanceToFirstObstacle ] = useState(startingDist - 50);
+    const [ horizontalSpeed, setHorizontalSpeed ] = useState(startingHorizSpeed);
+    const [ scoredClosestObstacle, setScoredClosestObstacle ] = useState(false);
 
     const history = useHistory();
 
     // return true if we've collided with the floor, ceiling or obstacle
     function checkCollision() {
-        if(birdState.y === 0 || birdState.y === maxY) {
+        if(birdState.y <= 0 || birdState.y >= maxY) {
             return true;
         }
-        if(distanceToFirstObstacle <= 5 && distanceToFirstObstacle >= -50
-            && (birdState.y < obstacleList[0] - (halfGapHeight - 10)
-                || birdState.y + 30 > obstacleList[0] + halfGapHeight)
+        if(distanceToFirstObstacle <= 15 && distanceToFirstObstacle >= -50
+            && (birdState.y < obstacleList[0].y - (5 + halfGapHeight)
+                || birdState.y + 10 > obstacleList[0].y + halfGapHeight)
         ) {
-            console.log(`y: ${birdState.y}, top: ${obstacleList[0] - (halfGapHeight - 10)}, bottom: ${obstacleList[0] + halfGapHeight}`)
+            // console.log(`dist: ${distanceToFirstObstacle}, y: ${birdState.y}, top: ${obstacleList[0].y - (halfGapHeight - 10)}, bottom: ${obstacleList[0].y + halfGapHeight}`);
             return true; 
         }
         return false;
     }
 
     function generateObstacle() {
-        let height = Math.floor(Math.random() * 300) + 60;
+        let height = Math.floor(Math.random() * 300) + 70;
         setObstacleList((list) => {
-            if(list.length === 4) return list;
+            if(list.length === 3) return list;
             let newList = [...list];
-            newList.push(height);
+            newList.push({y: height, top: generateText(height - (halfGapHeight - 10)), bottom: generateText(500 - height - halfGapHeight)});
+            // console.log(newList[newList.length - 1])
             return newList
         })
     }
@@ -90,9 +73,10 @@ export const FlappyPhaetonView = (props: any) => {
             }
         });
         setDistanceToFirstObstacle((dist) => {
-            let newDist = dist - horizSpeed;
+            let newDist = dist - horizontalSpeed;
             return newDist;
         });
+        setHorizontalSpeed((s) => s + 0.01);
     }
 
     function jump() {
@@ -117,15 +101,18 @@ export const FlappyPhaetonView = (props: any) => {
         }
     }, [gameStopped]);
 
-    if(distanceToFirstObstacle < -100) {
+    if(distanceToFirstObstacle < -50 && !scoredClosestObstacle) {
+        setPlayerScore((s) => s + 1);
+        setScoredClosestObstacle(true);
+    } else if(distanceToFirstObstacle < -150) {
         setObstacleList((ol) => {
             const newOL = ol.slice(1);
             return newOL;
-        })
+        });
         setDistanceToFirstObstacle((dist) => {
             return startingDist + dist;
-        })
-        setPlayerScore((s) => s + 1);
+        });
+        setScoredClosestObstacle(false);
     }
     
     if(checkCollision()) {
@@ -134,7 +121,8 @@ export const FlappyPhaetonView = (props: any) => {
         setPlayerVictoryStatus(PlayerVictoryStatus.Loss);
         setObstacleList([]);
         setDistanceToFirstObstacle(startingDist);
-        setPlayerScore(0);
+        setHorizontalSpeed(startingHorizSpeed);
+        setScoredClosestObstacle(false);
     }
 
     const getVictoryStatusText = (status: PlayerVictoryStatus) => {
@@ -157,14 +145,9 @@ export const FlappyPhaetonView = (props: any) => {
             } else if(ev.key === " ") {
                 setGameStopped(false);
                 setPlayerVictoryStatus(PlayerVictoryStatus.InProgress);
+                setPlayerScore(0);
             }
         }}>
-        
-            <button 
-                className="Episode Episode-Five" 
-                onClick={() => history.push("/episode-five")}
-                style={{ position: "fixed", left: "5vh", top: "5vw" }}
-            > Quit </button>
             <div className="game-container" style={{alignContent: "center"}}>
                 <div className="sky" style={{ top: "0px" }}>
                 <video autoPlay muted loop style={{ objectFit: "fill", width: "100%", height: "130%", marginTop: "-11%" }}>
@@ -172,13 +155,24 @@ export const FlappyPhaetonView = (props: any) => {
                     Your browser does not support HTML5 video
                 </video>`
                     <PhaetonComponent posX={birdState.x} posY={birdState.y}/>
-                    {obstacleList.map((y, i) => {
+                    {obstacleList.map((o, i) => {
                         return (
-                            <ObstacleComponent x={birdState.x + distanceToFirstObstacle + i * 250} y={y} key={"obstacle-" + i} />
+                            <ObstacleComponent 
+                                x={birdState.x + distanceToFirstObstacle + i * 250} 
+                                y={o.y} key={"obstacle-" + i} 
+                                textTop={o.top}
+                                textBottom={o.bottom}    
+                            />
                         )
                     })}
                 </div>
             </div>
+            <button 
+                className="Episode Episode-Five" 
+                onClick={() => history.push("/episode-five")}
+                style={{ position: "fixed", left: "5vh", top: "5vw" }}
+            > Quit </button>
+            <p className="score">{playerScore}</p>
             {playerVictoryStatus !== PlayerVictoryStatus.InProgress ? <div className="game-overlay game-container">
                 <b className="victory-display">{getVictoryStatusText(playerVictoryStatus)}</b>
             </div> : null}
