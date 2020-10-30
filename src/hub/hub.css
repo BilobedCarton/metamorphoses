@@ -43,12 +43,12 @@
     transform: rotate(-90deg);
     margin-left: -10.5vh;
     margin-top: 23vh;
-    margin-bottom: 10vh;
-    color: white; 
+    margin-bottom: 11vh;
+    color: #fff;
     flex: 0.5 0.5;
     width: 30vh;
     text-align: left;
-    font-size: 2.5rem;
+    font-size: 4.4vh;
     font-weight: lighter;
 }
 
@@ -70,13 +70,14 @@
 
 .Ep-5-Text {
     transform: rotate(-90deg);
-    color: white;
+    color: #fff;
     text-align: right;
     width: 36vh;
     margin-left: -14.5vh;
     margin-top: 14vh;
-    font-size: larger;
+    font-size: 2.5vh;
     line-height: 1;
+    font-weight: lighter;
 }
 
 .Ep-6 {

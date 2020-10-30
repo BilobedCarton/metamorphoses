@@ -27,7 +27,7 @@ export function HubView(props: any) {
                     <p className="Ep-5-Text">
                         <p style={{ marginBottom: "0vh" }}>WRITTEN AND</p>
                         <p style={{ marginBottom: "0vh", marginTop: "0vh" }}>ORIGINALLY DIRECTED BY </p>
-                        <b style={{ fontSize: "2rem" }}>MARY ZIMMERMAN</b></p>
+                        <b style={{ fontSize: "3.7vh" }}>MARY ZIMMERMAN</b></p>
                 </div>
                 <img className="Ep-Icon Ep-6" src={ep6Icon} alt="Episode 6" tabIndex={0} onClick={() => history.push("/episode-six")}/>
             </div>
