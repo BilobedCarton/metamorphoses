@@ -1,0 +1,85 @@
+
+.Hub-Container {
+    background-image: url("../assets/hub/background.png");
+    height: 100vh;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.Episode-Button-Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.Ep-Icon {
+    width: 10vh;
+    margin-left: 1vh;
+}
+
+.Ep-1 {
+    margin-top: 10vh;
+    height: 40vh;
+}
+
+.Ep-2 {
+    margin-top: 3vh;
+    height: 60vh;
+}
+
+.Ep-3-Container {
+    display: flex;
+    flex-direction: column;
+}
+
+.Ep-3 {
+    margin-left: 0vh;
+    margin-top: 0vh;
+    height: 45vh;
+}
+
+.Ep-3-Text {
+    transform: rotate(-90deg);
+    margin-left: -10.5vh;
+    margin-top: 23vh;
+    margin-bottom: 10vh;
+    color: white; 
+    flex: 0.5 0.5;
+    width: 30vh;
+    text-align: left;
+    font-size: 2.5rem;
+    font-weight: lighter;
+}
+
+.Ep-4 {
+    margin-top: 10vh;
+    height: 60vh;
+}
+
+.Ep-5-Container {
+    display: flex;
+    flex-direction: column;
+}
+
+.Ep-5 {
+    margin-left: 0vh;
+    margin-top: 6vh;
+    height: 41vh;
+}
+
+.Ep-5-Text {
+    transform: rotate(-90deg);
+    color: white;
+    text-align: right;
+    width: 36vh;
+    margin-left: -14.5vh;
+    margin-top: 14vh;
+    font-size: larger;
+    line-height: 1;
+}
+
+.Ep-6 {
+    margin-top: 30vh;
+    height: 55vh;
+}
