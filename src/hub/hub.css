@@ -108,6 +108,7 @@
 }
 
 .Materialize {
+    opacity: 100%;
     animation-name: materialize;
     animation-duration: 1.5s;
 }

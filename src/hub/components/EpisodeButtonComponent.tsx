@@ -19,18 +19,19 @@ export const EpisodeButtonComponent: React.FC<IEpisodeButtonProps> = (props) => 
 
     return (
         <div 
-            style={{height: "fit-content"}}
+            style={{height: "fit-content", outline: "none"}}
             onFocus={() => setFocused(FocusState.FOCUSED)} 
             onBlur={() => setFocused(FocusState.UNFOCUSED)}
             onMouseEnter={() => setFocused(FocusState.FOCUSED)}
             onMouseLeave={() => setFocused(FocusState.UNFOCUSED)}
+            tabIndex={0} 
+            onClick={props.onClick}
+            onKeyDown={(event) => { if(event.key === "Enter") props.onClick() }}
         >
             <img 
                 className={props.imgClassName} 
                 src={props.src} 
                 alt={props.titleText} 
-                tabIndex={0} 
-                onClick={props.onClick}
             />
             <p style={{display: focused === FocusState.UNTOUCHED ? "none" : "block"}} className={props.textClassName + (focused === FocusState.FOCUSED ? " Materialize" : " Dematerialize")}>{props.titleText}</p>
         </div>
