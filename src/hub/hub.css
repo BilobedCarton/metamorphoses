@@ -108,29 +108,29 @@
 }
 
 .Materialize {
-    opacity: 100%;
+    opacity: 1;
     animation-name: materialize;
     animation-duration: 1.5s;
 }
 
 @keyframes materialize {
     from {
-        opacity: 0%;
+        opacity: 0;
     } to {
-        opacity: 100%;
+        opacity: 1;
     }
 }
 
 .Dematerialize {
-    opacity: 0%;
+    opacity: 0;
     animation-name: dematerialize;
     animation-duration: 2s;
 }
 
 @keyframes dematerialize {
     from {
-        opacity: 100%;
+        opacity: 1;
     } to {
-        opacity: 0%;
+        opacity: 0;
     }
 }
