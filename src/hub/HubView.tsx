@@ -26,17 +26,17 @@ export function HubView(props: any) {
                 <div className="Ep-Icon Ep-5-Container">
                     <EpisodeButtonComponent imgClassName="Ep-Icon Ep-5" textClassName="Ep-Title" titleText="Episode 5" src={ep5Icon} onClick={() => history.push("/episode-five")}/>
                     <div className="Ep-5-Text">
-                        <p style={{ marginBottom: "0vh" }}>WRITTEN AND</p>
-                        <p style={{ marginBottom: "0vh", marginTop: "0vh" }}>ORIGINALLY DIRECTED BY </p>
-                        <b style={{ fontSize: "3.7vh" }}>MARY ZIMMERMAN</b>
+                        <p style={{ marginBottom: "0vmin" }}>WRITTEN AND</p>
+                        <p style={{ marginBottom: "0vmin", marginTop: "0vmin" }}>ORIGINALLY DIRECTED BY </p>
+                        <b style={{ fontSize: "3.7vmin" }}>MARY ZIMMERMAN</b>
                     </div>
                 </div>
                 <EpisodeButtonComponent imgClassName="Ep-Icon Ep-6" textClassName="Ep-Title" titleText="Episode 6" src={ep6Icon} onClick={() => history.push("/episode-six")}/>
             </div>
             <div className="Additional-Credits">
-                <p style={{ margin: "0vh"}}>DIRECTED BY <b>DESIR&Eacute; BENNETT</b></p>
-                <p style={{ margin: "0vh"}}>BASED ON <b>THE MYTHS OF OVID</b></p>
-                <p style={{ margin: "0vh"}}>NORTHEASTERN UNIVERSITY <b>DEPARTMENT OF THEATRE</b></p>
+                <p style={{ margin: "0vmin"}}>DIRECTED BY <b>DESIR&Eacute; BENNETT</b></p>
+                <p style={{ margin: "0vmin"}}>BASED ON <b>THE MYTHS OF OVID</b></p>
+                <p style={{ margin: "0vmin"}}>NORTHEASTERN UNIVERSITY <b>DEPARTMENT OF THEATRE</b></p>
             </div>
         </div>
     );

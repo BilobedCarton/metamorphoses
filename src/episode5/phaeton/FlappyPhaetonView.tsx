@@ -25,6 +25,9 @@ export const FlappyPhaetonView = (props: any) => {
 
     const history = useHistory();
 
+    // check if the user has played before
+    const playerHighScore = localStorage.getItem("phaetonHighScore") ? parseInt(localStorage.getItem("phaetonHighScore") as string) : NaN;
+
     // return true if we've collided with the floor, ceiling or obstacle
     function checkCollision() {
         if(birdState.y <= 0 || birdState.y >= maxY) {
@@ -116,6 +119,11 @@ export const FlappyPhaetonView = (props: any) => {
     }
     
     if(checkCollision()) {
+        // set high score
+        if(isNaN(playerHighScore) || playerScore > playerHighScore) {
+            localStorage.setItem("phaetonHighScore", "" + playerScore);
+        }
+
         setBirdState(startingBirdState);
         setGameStopped(true);
         setPlayerVictoryStatus(PlayerVictoryStatus.Loss);
@@ -172,7 +180,10 @@ export const FlappyPhaetonView = (props: any) => {
                 onClick={() => history.push("/episode-five")}
                 style={{ position: "fixed", left: "5vh", top: "5vw" }}
             > Quit </button>
-            <p className="score">{playerScore}</p>
+            <div className="score">
+                <p className="score-item">{isNaN(playerHighScore) ? "" : `Personal best: ${playerHighScore}`}</p>
+                <p className="score-item">{`Score: ${playerScore}`}</p>
+            </div>
             {playerVictoryStatus !== PlayerVictoryStatus.InProgress ? <div className="game-overlay game-container">
                 <b className="victory-display">{getVictoryStatusText(playerVictoryStatus)}</b>
             </div> : null}

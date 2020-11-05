@@ -63,8 +63,14 @@
 
 .score {
     position: fixed;
-    left: 50%;
+    top: 10%;
+    left: 38%;
     color: rgb(255, 115, 0);
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bolder;
+    line-height: 0.5;
+}
+
+.score-item {
+
 }

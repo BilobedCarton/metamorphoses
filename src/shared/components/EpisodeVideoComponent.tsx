@@ -6,7 +6,7 @@ type IEpisodeVideoComponentProps = {
 }
 
 const EpisodeVideoComponentStyle: CSSProperties = {
-    marginTop: "10vh",
+    marginTop: "15vh",
     marginLeft: "auto",
     marginRight: "auto",
     marginBottom: "5vh",

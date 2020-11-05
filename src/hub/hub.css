@@ -14,27 +14,27 @@
 }
 
 .Ep-Icon {
-    width: 10vh;
-    margin-left: 1vh;
+    max-width: 10vmin;
+    margin-left: 1vmin;
 }
 
 .Ep-1 {
-    margin-top: 10vh;
-    height: 40vh;
+    margin-top: 10vmin;
+    height: 40vmin;
 }
 
 .Ep-Title {
     transform: rotate(-90deg);
     color: white;
-    font-size: 7vh;
-    margin: -20vh;
-    margin-top: -22vh;
+    font-size: 7vmin;
+    margin: -20vmin;
+    margin-top: -22vmin;
     font-weight: lighter;
 }
 
 .Ep-2 {
-    margin-top: 3vh;
-    height: 60vh;
+    margin-top: 3vmin;
+    height: 60vmin;
 }
 
 .Ep-3-Container {
@@ -43,29 +43,29 @@
 
 .Ep-3 {
     position: relative;
-    top: 6vh;
-    margin-left: 0vh;
-    margin-top: 0vh;
-    height: 45vh;
+    top: 6vmin;
+    margin-left: 0vmin;
+    margin-top: 0vmin;
+    height: 45vmin;
 }
 
 .Ep-3-Text {
     transform: rotate(-90deg);
-    margin-left: -10vh;
-    margin-top: 22vh;
-    margin-bottom: 5vh;
+    margin-left: -10vmin;
+    margin-top: 22vmin;
+    margin-bottom: 5vmin;
     color: #fff;
     flex: 0.5 0.5;
-    width: 30vh;
+    width: 30vmin;
     text-align: left;
-    font-size: 4.4vh;
+    font-size: 4.4vmin;
     font-weight: lighter;
     line-height: 1.2;
 }
 
 .Ep-4 {
-    margin-top: 10vh;
-    height: 60vh;
+    margin-top: 10vmin;
+    height: 60vmin;
 }
 
 .Ep-5-Container {
@@ -73,38 +73,38 @@
 }
 
 .Ep-5 {
-    margin-left: 0vh;
-    margin-top: 6vh;
-    height: 41vh;
+    margin-left: 0vmin;
+    margin-top: 6vmin;
+    height: 41vmin;
 }
 
 .Ep-5-Text {
     position: fixed;
-    top: 46vh;
+    top: 46vmin;
     transform: rotate(-90deg);
     color: #fff;
     text-align: right;
-    width: 36vh;
-    margin-left: -14.5vh;
-    margin-top: 14vh;
-    font-size: 2.5vh;
+    width: 36vmin;
+    margin-left: -14.5vmin;
+    margin-top: 14vmin;
+    font-size: 2.5vmin;
     line-height: 1;
     font-weight: lighter;
 }
 
 .Ep-6 {
-    margin-top: 30vh;
-    height: 55vh;
+    margin-top: 30vmin;
+    height: 55vmin;
 }
 
 .Additional-Credits {
-    position: fixed;
-    top: 90%;
+    position: relative;
     margin-left: 2vw;
     color: white;
     text-align: left;
     font-weight: lighter;
-    font-size: 2vh;
+    font-size: 2vmin;
+    margin-top: 38vmin;
 }
 
 .Materialize {

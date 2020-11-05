@@ -6,10 +6,11 @@ type IBackgroundComponentProps = {
 
 const BackgroundComponentStyle: React.CSSProperties = {
     position: "fixed", 
-    top: "-50%", 
-    left: "-50%", 
-    width: "200%", 
-    height: "200%",
+    top: "-20%", 
+    left: "0%", 
+    width: "100%", 
+    height: "140%",
+    objectFit: "cover",
     zIndex: -99
 }
 
