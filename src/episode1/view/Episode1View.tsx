@@ -95,7 +95,7 @@ export function Episode1View(props: any) {
                     <div>
                         <button className={"Episode Episode-One"}
                             onClick={() => {history.push("episode-one/answers")}}
-                        > See What Other People Answered </button>
+                        > SEE WHAT OTHER PEOPLE ANSWERED </button>
                     </div>
                 </div>
             }

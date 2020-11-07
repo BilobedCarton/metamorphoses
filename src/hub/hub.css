@@ -79,14 +79,12 @@
 }
 
 .Ep-5-Text {
-    position: fixed;
-    top: 46vmin;
     transform: rotate(-90deg);
     color: #fff;
     text-align: right;
     width: 36vmin;
-    margin-left: -14.5vmin;
-    margin-top: 14vmin;
+    margin-left: -13.25vmin;
+    margin-top: 47vmin;
     font-size: 2.5vmin;
     line-height: 1;
     font-weight: lighter;
@@ -98,13 +96,17 @@
 }
 
 .Additional-Credits {
-    position: relative;
+    position: fixed;
     margin-left: 2vw;
     color: white;
     text-align: left;
     font-weight: lighter;
     font-size: 2vmin;
-    margin-top: 38vmin;
+    margin-top: 20vmin;
+}
+
+.Hidden-Text {
+    opacity: 0;
 }
 
 .Materialize {

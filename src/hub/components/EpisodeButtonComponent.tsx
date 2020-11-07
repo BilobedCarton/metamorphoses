@@ -17,6 +17,17 @@ enum FocusState {
 export const EpisodeButtonComponent: React.FC<IEpisodeButtonProps> = (props) => {
     const [focused, setFocused] = useState(FocusState.UNTOUCHED);
 
+    const getClassNameFromFocusState = (fs: FocusState) => {
+        switch(fs) {
+            case FocusState.UNTOUCHED:
+                return "Hidden-Text";
+            case FocusState.FOCUSED:
+                return "Materialize";
+            case FocusState.UNFOCUSED:
+                return "Dematerialize";
+        }
+    }
+
     return (
         <div 
             style={{height: "fit-content", outline: "none"}}
@@ -33,7 +44,7 @@ export const EpisodeButtonComponent: React.FC<IEpisodeButtonProps> = (props) => 
                 src={props.src} 
                 alt={props.titleText} 
             />
-            <p style={{display: focused === FocusState.UNTOUCHED ? "none" : "block"}} className={props.textClassName + (focused === FocusState.FOCUSED ? " Materialize" : " Dematerialize")}>{props.titleText}</p>
+            <p style={{display: "block" }} className={props.textClassName + " " + getClassNameFromFocusState(focused)}>{props.titleText}</p>
         </div>
     )
 }

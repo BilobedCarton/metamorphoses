@@ -6,9 +6,11 @@ import './App.css';
 import { Episode1View } from './episode1/view/Episode1View';
 import { Episode2View } from './episode2/Episode2View';
 import { Episode3View } from './episode3/Episode3View';
+import { UnderworldView } from './episode3/Underworld/UnderworldView';
 import { Episode4View } from './episode4/Episode4View';
 import { Episode5View } from './episode5/Episode5View';
 import { FlappyPhaetonView } from './episode5/phaeton/FlappyPhaetonView';
+import { Episode6View } from './episode6/Episode6View';
 import { HubView } from './hub/HubView';
 
 function App() {
@@ -40,10 +42,13 @@ function App() {
               <Episode5View/>
             </Route>
             <Route exact path={"/episode-six"}>
-              <p>Episode 6</p>
+              <Episode6View/>
             </Route>
             <Route exact path={"/phaeton"}>
               <FlappyPhaetonView/>
+            </Route>
+            <Route exact path={"/underworld"}>
+              <UnderworldView/>
             </Route>
           </Switch>
         </BrowserRouter>

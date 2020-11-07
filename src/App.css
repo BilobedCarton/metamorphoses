@@ -43,11 +43,11 @@
 
 button.Episode {
   font-weight: bold;
-  font-size: medium;
+  font-size: 2vmax;
   background-color: transparent;
   border: 3px solid black;
   color: black;
-  padding: 15px 32px;
+  padding: 1vh 2vw;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -56,7 +56,7 @@ button.Episode {
 }
 
 button.Episode-Two {
-  background-color: rgb(0, 100, 80);
+  /* background-color: rgb(0, 100, 80); */
   opacity: 0.75;
 }
 
@@ -78,16 +78,16 @@ button.Episode-Three:hover, button.Episode-Three:focus {
 }
 
 button.Episode-Four {
-  color: pink;
-  background-color: darkred;
-  border: 3px solid pink;
+  color: darkred;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 3px solid darkred;
   opacity: 0.75;
 }
 
 button.Episode-Four:hover, button.Episode-Four:focus {
-  background-color: pink;
-  color: darkred;
-  border: 3px solid darkred;
+  background-color: darkred;
+  color: pink;
+  border: 3px solid pink;
 }
 
 button.Episode-Five {
@@ -98,6 +98,12 @@ button.Episode-Five {
 button.Episode-Five:hover, button.Episode-Five:focus {
   background-color: black;
   color: rgb(255, 115, 0);
+}
+
+button.Episode-Six:hover, button.Episode-Six:focus {
+  color: rgb(248, 236, 212);
+  background-color: black;
+  border: 3px solid rgb(248, 236, 212);
 }
 
 ::placeholder {

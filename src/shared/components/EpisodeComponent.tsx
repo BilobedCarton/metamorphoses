@@ -48,13 +48,16 @@ export const  EpisodeComponent: React.FC<IEpisodeComponentProps> = (props) => {
                 title={props.videoTitle}
                 source={props.videoSrc}
             />
-            {props.children}
+            <div style={{ minHeight: "35vh" }}>
+                {props.children}
+
+            </div>
             <button className={"Episode " + getButtonStyleClass()}
-                style={{ position: "fixed", top: "5vh", left: "5vw" }}
+                style={{ position: "absolute", top: "5vh", left: "5vw" }}
                 onClick={() => history.push("/")}
             > Hub </button>
             { props.episodeNumber !== 6 ? <button className={"Episode " + getButtonStyleClass()}
-                style={{ position: "fixed", bottom: "5vh", right: "5vw" }}
+                style={{ position: "absolute", right: "5vw", marginTop: "12vmin" }}
                 onClick={navToNextEpisode}
             > Episode {props.episodeNumber + 1} </button> : null }
         </div>

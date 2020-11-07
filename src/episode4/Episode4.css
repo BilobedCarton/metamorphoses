@@ -1,0 +1,80 @@
+
+.Guideline {
+    color: darkred;
+    font-size: larger;
+    font-weight: bold;
+    text-shadow: pink 0px 0px 5px;
+    font-size: x-large;
+}
+
+.info {
+    /* width: 38vw; */
+    background-color: rgba(0, 0, 0, 0.75);
+    color: pink;
+    font-size: medium;
+    font-weight: bold; 
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding: 1vw;
+    text-align: center;
+}
+
+.control {
+    width: 12vw;
+    text-align: center;
+}
+
+.rhap_main-controls-button, .rhap_volume-button, .rhap_repeat-button {
+    font-size: 3vw;
+    width: fit-content;
+    height: fit-content;
+    color: pink;
+}
+
+.rhap_repeat-button {
+    font-size: 2vw;
+}
+
+.rhap_volume-button {
+    font-size: 3vmin;
+}
+
+.rhap_time {
+    color: pink;
+    font-size: 3vw;
+}
+
+.rhap_progress-indicator {
+    background-color: pink;
+    top: 0px;
+    width: 2.5vmin;
+    height: 2.5vmin;
+    margin-left: -1vmin;
+    margin-top: -0.9vmin;
+}
+
+.rhap_volume-indicator {
+    background-color: pink;
+    margin-left: -0.3vmin;
+    top: -0.4vh;
+    width: 1.2vh;
+    height: 1.2vh;
+    min-height: 8px;
+    min-width: 8px;
+}
+
+.rhap_download-progress, .rhap_progress-filled {
+    background-color: darkred;
+}
+
+.rhap_volume-bar {
+    background-color: darkred;
+    min-height: 2px;
+    max-height: 4px;
+    height: 1.2vmin;
+}
+
+.rhap_progress-bar {
+    height: 1vmin;
+    margin-right: 0.75vmin;
+}

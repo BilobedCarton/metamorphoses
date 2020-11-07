@@ -62,9 +62,11 @@
 }
 
 .score {
+    display: block;
     position: fixed;
     top: 10%;
-    left: 38%;
+    width: 30%;
+    left: 34%;
     color: rgb(255, 115, 0);
     font-size: 2rem;
     font-weight: bolder;
@@ -72,5 +74,5 @@
 }
 
 .score-item {
-
+    /* if we need more specific styling */
 }
