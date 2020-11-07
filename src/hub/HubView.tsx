@@ -16,27 +16,36 @@ export function HubView(props: any) {
     return (
         <div className="Hub-Container">
             <div className="Episode-Button-Container">
-                <EpisodeButtonComponent imgClassName="Ep-Icon Ep-1" textClassName="Ep-Title" titleText="Episode 1" src={ep1Icon} onClick={() => history.push("/episode-one")}/>
-                <EpisodeButtonComponent imgClassName="Ep-Icon Ep-2" textClassName="Ep-Title" titleText="Episode 2" src={ep2Icon} onClick={() => history.push("/episode-two")}/>
+                <EpisodeButtonComponent imgClassName="Ep-Icon Ep-1" textClassName="Ep-Title Ep-Title-Small" titleText="EPISODE ONE" src={ep1Icon} onClick={() => history.push("/episode-one")}/>
+                <EpisodeButtonComponent imgClassName="Ep-Icon Ep-2" textClassName="Ep-Title Ep-Title-Big" titleText="EPISODE TWO" src={ep2Icon} onClick={() => history.push("/episode-two")}/>
                 <div className="Ep-Icon Ep-3-Container">
-                    <p className="Ep-3-Text">SCENES FROM <b>METAMORPHOSES</b></p>
-                    <EpisodeButtonComponent imgClassName="Ep-Icon Ep-3" textClassName="Ep-Title" titleText="Episode 3" src={ep3Icon} onClick={() => history.push("/episode-three")}/>
+                    <div className="Ep-3-Text">
+                        <p style={{ margin: "0vh"}}>SCENES FROM</p>
+                        <b>METAMORPHOSES</b>
+                    </div>
+                    <EpisodeButtonComponent imgClassName="Ep-Icon Ep-3" textClassName="Ep-Title Ep-Title-3" titleText="EPISODE THREE" src={ep3Icon} onClick={() => history.push("/episode-three")}/>
                 </div>
-                <EpisodeButtonComponent imgClassName="Ep-Icon Ep-4" textClassName="Ep-Title" titleText="Episode 4" src={ep4Icon} onClick={() => history.push("/episode-four")}/>
+                <EpisodeButtonComponent imgClassName="Ep-Icon Ep-4" textClassName="Ep-Title Ep-Title-Big" titleText="EPISODE FOUR" src={ep4Icon} onClick={() => history.push("/episode-four")}/>
                 <div className="Ep-Icon Ep-5-Container">
-                    <EpisodeButtonComponent imgClassName="Ep-Icon Ep-5" textClassName="Ep-Title" titleText="Episode 5" src={ep5Icon} onClick={() => history.push("/episode-five")}/>
+                    <EpisodeButtonComponent imgClassName="Ep-Icon Ep-5" textClassName="Ep-Title Ep-Title-Small" titleText="EPISODE FIVE" src={ep5Icon} onClick={() => history.push("/episode-five")}/>
                     <div className="Ep-5-Text">
                         <p style={{ marginBottom: "0vmin" }}>WRITTEN AND</p>
                         <p style={{ marginBottom: "0vmin", marginTop: "0vmin" }}>ORIGINALLY DIRECTED BY </p>
                         <b style={{ fontSize: "3.7vmin" }}>MARY ZIMMERMAN</b>
                     </div>
                 </div>
-                <EpisodeButtonComponent imgClassName="Ep-Icon Ep-6" textClassName="Ep-Title" titleText="Episode 6" src={ep6Icon} onClick={() => history.push("/episode-six")}/>
+                <EpisodeButtonComponent imgClassName="Ep-Icon Ep-6" textClassName="Ep-Title Ep-Title-Big" titleText="EPISODE SIX" src={ep6Icon} onClick={() => history.push("/episode-six")}/>
             </div>
             <div className="Additional-Credits">
                 <p style={{ margin: "0vmin"}}>DIRECTED BY <b>DESIR&Eacute; BENNETT</b></p>
                 <p style={{ margin: "0vmin"}}>BASED ON <b>THE MYTHS OF OVID</b></p>
                 <p style={{ margin: "0vmin"}}>NORTHEASTERN UNIVERSITY <b>DEPARTMENT OF THEATRE</b></p>
+            </div>
+            <div className="Program-Button-Container">
+                <button className="Program-Buttons" onClick={() => history.push("/director-note")}>DIRECTOR'S NOTE</button>
+                <button className="Program-Buttons" onClick={() => history.push("/mary-zimmerman")}>ABOUT THE PLAYWRIGHT</button>
+                <button className="Program-Buttons" onClick={() => history.push("/behind-the-scenes")}>BEHIND THE SCENES</button>
+                <button className="Program-Buttons" onClick={() => history.push("/credits")}>CREDITS</button>
             </div>
         </div>
     );

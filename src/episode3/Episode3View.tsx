@@ -15,7 +15,7 @@ export const Episode3View = (props: any) => {
             videoSrc={"https://player.vimeo.com/video/76979871"}
             episodeNumber={3}    
         >
-            <button className="Episode Episode-Three" onClick={() => history.push("/underworld")}>Enter the <b>Underworld</b></button>
+            <button className="Episode Episode-Three" onClick={() => history.push("/underworld")}>ENTER THE <b style={{ fontWeight: "bolder"}}>UNDERWORLD</b></button>
         </EpisodeComponent>
     );
 }

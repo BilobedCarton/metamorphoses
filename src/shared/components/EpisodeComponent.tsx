@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import { useHistory } from "react-router";
 import { BackgroundImageComponent, BackgroundVideoComponent } from "./BackgroundVideoComponent";
 import { EpisodeVideoComponent } from "./EpisodeVideoComponent";
@@ -38,28 +38,39 @@ export const  EpisodeComponent: React.FC<IEpisodeComponentProps> = (props) => {
         }
     }
 
+    const getBackgroundColor = () => {
+        switch(props.episodeNumber) {
+            case 1: return "darkOrange";
+            case 2: return "royalBlue";
+            case 3: return "seaGreen";
+            case 4: return "lightCoral";
+            case 5: return "black";
+            case 6: return "seashell";
+            default: return "black";
+        }
+    }
+
     return (
         <div style={props.style}>
             {props.backgroundIsVideo 
-                ? <BackgroundVideoComponent src={props.backgroundSrc}/>
-                : <BackgroundImageComponent src={props.backgroundSrc}/>
+                ? <BackgroundVideoComponent src={props.backgroundSrc} backgroundColor={getBackgroundColor()}/>
+                : <BackgroundImageComponent src={props.backgroundSrc} backgroundColor={getBackgroundColor()}/>
             }
             <EpisodeVideoComponent
                 title={props.videoTitle}
                 source={props.videoSrc}
             />
-            <div style={{ minHeight: "35vh" }}>
+            <div style={{ minHeight: "30vh", marginBottom: "40px" }}>
                 {props.children}
-
             </div>
             <button className={"Episode " + getButtonStyleClass()}
                 style={{ position: "absolute", top: "5vh", left: "5vw" }}
                 onClick={() => history.push("/")}
-            > Hub </button>
+            > HOME </button>
             { props.episodeNumber !== 6 ? <button className={"Episode " + getButtonStyleClass()}
-                style={{ position: "absolute", right: "5vw", marginTop: "12vmin" }}
+                style={{ position: "absolute", top: "5vh", right: "5vw" }}
                 onClick={navToNextEpisode}
-            > Episode {props.episodeNumber + 1} </button> : null }
+            > EPISODE {props.episodeNumber + 1} </button> : null }
         </div>
     );
 }

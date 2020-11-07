@@ -1,0 +1,106 @@
+.Program-Container {
+    background-image: url("../assets/hub/background.png");
+    min-height: 100vh;
+    max-height: 115vh;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    display: block;
+}
+
+.Program-Content {
+    color: white;
+    position: absolute;
+    margin-top: 15vh;
+    left: 10%;
+    /* margin-left: -40vw; */
+    width: 80vw;
+    margin-bottom: 10vh;
+    display: block;
+}
+
+.Program-Button {
+    position: absolute;
+    left: 0vw;
+    margin: 5vmin;
+    font-weight: 600;
+    font-size: min(2.5vmax, 1rem);
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 1vh 1vw;
+    text-align: center;
+    outline: none;
+}
+
+.Program-Button:hover, .Program-Button:focus {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+}
+
+.Director-Note {
+    max-width: 800px;
+    outline: 2px white solid;
+    padding: 1vmin;
+    padding-bottom: 10vh;
+}
+
+.Director-Note-Title {
+    font-size: min(2.7vmax, 2rem);
+    margin: 2vh;
+}
+
+.Director-Note-Body {
+    text-align: left;
+    font-size: min(1.9vmax, 1.5rem);
+}
+
+.Director-Note-Footer {
+    font-size: min(3vmax, 1.6rem);
+    margin-top: 2vmax;
+    margin-left: min(40vw, 550px);
+}
+
+.Playwright {
+    max-width: 690px;
+    outline: 2px white solid;
+    padding: 1vmin
+}
+
+.Playwright-Title {
+    font-size: min(3.3vmin, 2.5rem);
+    margin: 2vh;
+}
+
+.Playwright-Photo-Section {
+    display: flex;
+}
+
+.Playwright-Photo {
+    width: 37vmin;
+    height: 37vmin;
+    max-width: 365px;
+    max-height: 365px;
+    outline: 2px white solid;
+    margin-right: 2vmin;
+}
+
+.Playwright-Photo-Text {
+    margin-top: 0;
+}
+
+.Playwright-Body {
+    margin: 2vmin;
+    text-align: left;
+    font-size: min(2.1vmin, 2rem);
+}
+
+.Credits {
+    max-width: 600px;
+}
+
+.Credits-Columns {
+    max-width: 600px;
+    display: inline-flex;
+}

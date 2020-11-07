@@ -30,7 +30,9 @@ export function Episode1View(props: any) {
                     margin: "8px",
                     border: "3px solid black",
                     backgroundColor: "transparent",
-                    fontSize: "18px"
+                    fontSize: "18px",
+                    width: "40vw",
+                    maxWidth: "450px"
                 }}
                 question={Q_STR_ARR[currentQuestion]}
                 answer={answers[currentQuestion]}
@@ -47,7 +49,7 @@ export function Episode1View(props: any) {
         return (
             <div>
                 {answers.map((answer, i) => (
-                    <p>{Q_STR_ARR[i] + ": " + answer}</p>
+                    <p key={"answer-" + i}>{Q_STR_ARR[i] + ": " + answer}</p>
                 ))}
             </div>
         )
@@ -70,14 +72,14 @@ export function Episode1View(props: any) {
                             ? <button className={"Episode Episode-One "} 
                                 onClick={() => {
                                     setCurrentQuestion(Math.max(0, currentQuestion - 1))
-                                }}>Previous</button> 
+                                }}>PREVIOUS</button> 
                             : null
                         }
                         <button className={"Episode Episode-One"}
                             onClick={() => {
                                 setCurrentQuestion(currentQuestion + 1)
                             }}
-                        >{currentQuestion !== 2 ? "Next" : "Finish"}</button>
+                        >{currentQuestion !== 2 ? "NEXT" : "FINISH"}</button>
                     </div>
                     { currentQuestion === 2 
                         ? <div style={{ display: "inline-block" }}>

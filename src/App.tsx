@@ -12,9 +12,14 @@ import { Episode5View } from './episode5/Episode5View';
 import { FlappyPhaetonView } from './episode5/phaeton/FlappyPhaetonView';
 import { Episode6View } from './episode6/Episode6View';
 import { HubView } from './hub/HubView';
+import { AboutTheAuthorView } from './program/AboutTheAuthorView';
+import { BehindTheScenesView } from './program/BehindTheScenesView';
+import { CreditsView } from './program/CreditsView';
+import { DirectorNoteView } from './program/DirectorNoteView';
+
+
 
 function App() {
-
   return (
     <div className="App" style={{ 
       // height: "100vh", 
@@ -50,23 +55,21 @@ function App() {
             <Route exact path={"/underworld"}>
               <UnderworldView/>
             </Route>
+            <Route exact path={"/director-note"}>
+              <DirectorNoteView/>
+            </Route>
+            <Route exact path={"/mary-zimmerman"}>
+              <AboutTheAuthorView/>
+            </Route>
+            <Route exact path={"/behind-the-scenes"}>
+              <BehindTheScenesView/>
+            </Route>
+            <Route exact path={"/credits"}>
+              <CreditsView/>
+            </Route>
           </Switch>
         </BrowserRouter>
       </div>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
     </div>
   );
 }

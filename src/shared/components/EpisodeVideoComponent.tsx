@@ -10,21 +10,22 @@ const EpisodeVideoComponentStyle: CSSProperties = {
     marginLeft: "auto",
     marginRight: "auto",
     marginBottom: "5vh",
-    width: "min-content",
+    width: "80vw",
+    maxWidth: "700px",
     overflow: "hidden",
-    paddingBottom: "14px",
-    paddingTop: "16px",
+    padding: "16px",
     background: "black"
 }
 
 export function EpisodeVideoComponent(props: IEpisodeVideoComponentProps) {
     return (
         <div style={EpisodeVideoComponentStyle}>
-            <div>
+            <div className="iframe-container">
                 <iframe 
                     title={props.title}
                     src={props.source}
-                    frameBorder={'0'}
+                    width="100%"
+                    frameBorder="0"
                     allowFullScreen
                     
                 />

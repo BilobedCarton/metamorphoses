@@ -2,6 +2,7 @@ import React from "react";
 
 type IBackgroundComponentProps = {
     src: any;
+    backgroundColor: string
 }
 
 const BackgroundComponentStyle: React.CSSProperties = {
@@ -16,7 +17,7 @@ const BackgroundComponentStyle: React.CSSProperties = {
 
 export function BackgroundVideoComponent(props: IBackgroundComponentProps) {
     return (
-        <video autoPlay muted loop style={BackgroundComponentStyle}>
+        <video autoPlay muted loop style={{...BackgroundComponentStyle, backgroundColor: props.backgroundColor}}>
             <source src={props.src} type="video/mp4"/>
             Your browser does not support HTML5 video
         </video>
@@ -25,6 +26,6 @@ export function BackgroundVideoComponent(props: IBackgroundComponentProps) {
 
 export function BackgroundImageComponent(props: IBackgroundComponentProps) {
     return (
-        <img style={{...BackgroundComponentStyle, backgroundColor: "black"}} src={props.src} alt=""/>
+        <img style={{...BackgroundComponentStyle, backgroundColor: props.backgroundColor}} src={props.src} alt=""/>
     )
 }

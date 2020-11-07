@@ -64,7 +64,7 @@ export const Episode4View = () => {
         return (
             <div>
                 <p className="Guideline">Make sure your sound is on.</p>
-                <button className="Episode Episode-Four" onClick={() => setProgress(EffectState.SOURCE)}>Start</button>
+                <button className="Episode Episode-Four" onClick={() => setProgress(EffectState.SOURCE)}>START</button>
             </div>
         );
     }
@@ -78,6 +78,8 @@ export const Episode4View = () => {
                     style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }}
                         volume={0.4}
                         src={sounds[progress]}
+                        autoPlay={false}
+                        autoPlayAfterSrcChange={false}
                     />
                 </div>
                 <div className="info">

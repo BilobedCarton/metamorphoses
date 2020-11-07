@@ -26,10 +26,23 @@
 .Ep-Title {
     transform: rotate(-90deg);
     color: white;
-    font-size: 7vmin;
+    font-size: 5vmin;
     margin: -20vmin;
-    margin-top: -22vmin;
-    font-weight: lighter;
+    margin-left: -19vmin;
+    font-weight: 300;
+}
+
+.Ep-Title-Small {
+    margin-bottom: -16vmin;
+    margin-top: -24vmin;
+}
+
+.Ep-Title-3 {
+    margin-top: -21vmin;
+}
+
+.Ep-Title-Big {
+    margin-top: -32vmin;
 }
 
 .Ep-2 {
@@ -50,8 +63,9 @@
 }
 
 .Ep-3-Text {
+    line-height: 1;
     transform: rotate(-90deg);
-    margin-left: -10vmin;
+    margin-left: -9.5vmin;
     margin-top: 22vmin;
     margin-bottom: 5vmin;
     color: #fff;
@@ -60,7 +74,7 @@
     text-align: left;
     font-size: 4.4vmin;
     font-weight: lighter;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 .Ep-4 {
@@ -83,7 +97,7 @@
     color: #fff;
     text-align: right;
     width: 36vmin;
-    margin-left: -13.25vmin;
+    margin-left: -12.75vmin;
     margin-top: 47vmin;
     font-size: 2.5vmin;
     line-height: 1;
@@ -97,12 +111,13 @@
 
 .Additional-Credits {
     position: fixed;
+    bottom: 8vh;
     margin-left: 2vw;
     color: white;
     text-align: left;
     font-weight: lighter;
     font-size: 2vmin;
-    margin-top: 20vmin;
+    /* margin-top: 16vmin; */
 }
 
 .Hidden-Text {
@@ -135,4 +150,33 @@
     } to {
         opacity: 0;
     }
+}
+
+.Program-Button-Container {
+    position: fixed;
+    bottom: 1vh;
+    display: flex;
+    width: 100%;
+    margin-left: 2vw
+}
+
+.Program-Buttons {
+    width: 23vw;
+    font-weight: 600;
+    font-size: min(2vw, 1rem);
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 1vh 1vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.5vw;
+    outline: none;
+}
+
+.Program-Buttons:hover, .Program-Buttons:focus {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
 }
