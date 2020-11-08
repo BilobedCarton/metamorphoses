@@ -13,7 +13,7 @@ export const AboutTheAuthorView = (props: any) => {
                 </div>
                 <div className="Playwright-Body">
                     <div className="Playwright-Photo-Section">
-                        <img className="Playwright-Photo" src={photo} alt="Playwright Photo"/>
+                        <img className="Playwright-Photo" src={photo} alt="Playwright"/>
                         <p className="Playwright-Photo-Text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
                             aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 

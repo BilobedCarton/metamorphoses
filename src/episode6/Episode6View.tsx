@@ -1,9 +1,12 @@
 import React from "react";
+import { useHistory } from "react-router";
 import { EpisodeComponent } from "../shared/components/EpisodeComponent";
 
 const background = require("../assets/ep6.MP4");
 
 export const Episode6View = () => {
+    const history = useHistory();
+
     return (
         <EpisodeComponent
             backgroundIsVideo={true}
@@ -12,6 +15,10 @@ export const Episode6View = () => {
             videoSrc={"https://player.vimeo.com/video/76979871"}
             episodeNumber={6}    
         >
+            <div>
+                <button className="Episode Episode-Six" onClick={() => history.push("/cookbook")}>BAUCIS AND PHILEMON'S <br/> COOKBOOK</button>
+            </div>
+            <button className="Episode Episode-Six" onClick={() => history.push("/behind-the-scenes/6")}>BEHIND THE SCENES</button>
         </EpisodeComponent>
     );
 }

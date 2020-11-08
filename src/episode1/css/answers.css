@@ -1,0 +1,33 @@
+
+button.Answers-Exit {
+    top: 3vmin;
+    left: 3vmin;
+    width: 25vw;
+    position: absolute;
+    font-size: min(3vmin, 1.5rem);
+}
+
+.Answer-Nav-Text {
+    margin-top: 8vh;
+    font-size: 3vmin;
+}
+
+button.Answer-Nav {
+    width: 20vw;
+    font-size: min(3vmin, 1.5rem);
+}
+
+.Answers-Container {
+    margin: 10vmin;
+}
+
+.Question {
+    font-weight: bold;
+    font-size: min(4vmin, 1.5rem);
+}
+
+.Answer {
+    font-size: min(4.5vmin, 1.25rem);
+    word-wrap: break-word;
+    max-width: 85vw;
+}

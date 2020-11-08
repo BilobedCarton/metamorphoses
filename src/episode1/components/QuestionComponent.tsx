@@ -9,13 +9,13 @@ type IQuestionComponentProps = {
 }
 
 const QuestionComponentStyle: React.CSSProperties = {
-    
+    wordBreak: "break-word"
 }
 
 export function QuestionComponent(props: IQuestionComponentProps) {
     return (
         <div style={QuestionComponentStyle}>
-            <p>{props.question}</p>
+            <p style={{ fontSize: "min(4vmin, 2rem)", marginBottom: "0" }}>{props.question}</p>
             <AutoSizeTextAreaComponent
                 style={props.textStyle}
                 value={props.answer}

@@ -3,13 +3,15 @@ import React from 'react';
 import { Route, Switch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import { Episode1View } from './episode1/view/Episode1View';
+import { ContextualAnswerView } from './episode1/view/AnswersView';
+import { ContextualEpisode1View } from './episode1/view/Episode1View';
 import { Episode2View } from './episode2/Episode2View';
 import { Episode3View } from './episode3/Episode3View';
 import { UnderworldView } from './episode3/Underworld/UnderworldView';
 import { Episode4View } from './episode4/Episode4View';
 import { Episode5View } from './episode5/Episode5View';
 import { FlappyPhaetonView } from './episode5/phaeton/FlappyPhaetonView';
+import { CookbookView } from './episode6/CookbookView';
 import { Episode6View } from './episode6/Episode6View';
 import { HubView } from './hub/HubView';
 import { AboutTheAuthorView } from './program/AboutTheAuthorView';
@@ -31,9 +33,7 @@ function App() {
             <Route exact path={"/"}>
               <HubView/>
             </Route>
-            <Route exact path={"/episode-one"}>
-              <Episode1View/>
-            </Route>
+            <Route path={"/episode-one/finished=:finished"} component={ContextualEpisode1View}/>
             <Route exact path={"/episode-two"}>
               <Episode2View/>
             </Route>
@@ -49,6 +49,9 @@ function App() {
             <Route exact path={"/episode-six"}>
               <Episode6View/>
             </Route>
+            <Route exact path={"/answers"}>
+              <ContextualAnswerView/>
+            </Route>
             <Route exact path={"/phaeton"}>
               <FlappyPhaetonView/>
             </Route>
@@ -61,11 +64,12 @@ function App() {
             <Route exact path={"/mary-zimmerman"}>
               <AboutTheAuthorView/>
             </Route>
-            <Route exact path={"/behind-the-scenes"}>
-              <BehindTheScenesView/>
-            </Route>
+            <Route path={"/behind-the-scenes/:from"} component={BehindTheScenesView}/>
             <Route exact path={"/credits"}>
               <CreditsView/>
+            </Route>
+            <Route exact path={"/cookbook"}>
+              <CookbookView/>
             </Route>
           </Switch>
         </BrowserRouter>

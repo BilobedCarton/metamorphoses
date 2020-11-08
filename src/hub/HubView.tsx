@@ -16,7 +16,7 @@ export function HubView(props: any) {
     return (
         <div className="Hub-Container">
             <div className="Episode-Button-Container">
-                <EpisodeButtonComponent imgClassName="Ep-Icon Ep-1" textClassName="Ep-Title Ep-Title-Small" titleText="EPISODE ONE" src={ep1Icon} onClick={() => history.push("/episode-one")}/>
+                <EpisodeButtonComponent imgClassName="Ep-Icon Ep-1" textClassName="Ep-Title Ep-Title-Small" titleText="EPISODE ONE" src={ep1Icon} onClick={() => history.push("/episode-one/finished=false")}/>
                 <EpisodeButtonComponent imgClassName="Ep-Icon Ep-2" textClassName="Ep-Title Ep-Title-Big" titleText="EPISODE TWO" src={ep2Icon} onClick={() => history.push("/episode-two")}/>
                 <div className="Ep-Icon Ep-3-Container">
                     <div className="Ep-3-Text">
@@ -44,7 +44,7 @@ export function HubView(props: any) {
             <div className="Program-Button-Container">
                 <button className="Program-Buttons" onClick={() => history.push("/director-note")}>DIRECTOR'S NOTE</button>
                 <button className="Program-Buttons" onClick={() => history.push("/mary-zimmerman")}>ABOUT THE PLAYWRIGHT</button>
-                <button className="Program-Buttons" onClick={() => history.push("/behind-the-scenes")}>BEHIND THE SCENES</button>
+                <button className="Program-Buttons" onClick={() => history.push("/behind-the-scenes/home")}>BEHIND THE SCENES</button>
                 <button className="Program-Buttons" onClick={() => history.push("/credits")}>CREDITS</button>
             </div>
         </div>
