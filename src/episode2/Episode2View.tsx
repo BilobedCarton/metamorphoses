@@ -1,6 +1,6 @@
 import React from "react";
 import { EpisodeComponent } from "../shared/components/EpisodeComponent";
-import { Ep2InteractiveComponent } from "./components/Ep2InteractiveComponent";
+import { ContextualEp2InteractiveComponent } from "./components/Ep2InteractiveComponent";
 
 const background = require("../assets/ep2.mp4");
 
@@ -14,7 +14,7 @@ export const Episode2View = () => {
             videoSrc={"https://player.vimeo.com/video/76979871"}
             episodeNumber={2}    
         >
-            <Ep2InteractiveComponent/>
+            <ContextualEp2InteractiveComponent/>
         </EpisodeComponent>
     );
 }

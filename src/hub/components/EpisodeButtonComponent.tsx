@@ -30,7 +30,7 @@ export const EpisodeButtonComponent: React.FC<IEpisodeButtonProps> = (props) => 
 
     return (
         <div 
-            style={{height: "fit-content", outline: "none"}}
+            style={{height: "fit-content", outline: "none", cursor: "pointer"}}
             onFocus={() => setFocused(FocusState.FOCUSED)} 
             onBlur={() => setFocused(FocusState.UNFOCUSED)}
             onMouseEnter={() => setFocused(FocusState.FOCUSED)}

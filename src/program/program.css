@@ -13,7 +13,7 @@
     margin-top: 10vh;
     left: 50%;
     margin-left: max(-40vw, -400px);
-    width: 80vw;
+    width: min(80vw, 800px);
     display: block;
 }
 
@@ -39,7 +39,7 @@
 
 .Director-Note {
     max-width: 800px;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
 }
 
 .Director-Note-Title {

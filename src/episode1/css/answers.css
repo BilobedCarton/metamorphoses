@@ -2,7 +2,7 @@
 button.Answers-Exit {
     top: 3vmin;
     left: 3vmin;
-    width: 25vw;
+    width: min(25vw, 225px);
     position: absolute;
     font-size: min(3vmin, 1.5rem);
 }

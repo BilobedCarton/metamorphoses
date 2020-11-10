@@ -118,7 +118,7 @@ export const CreditsView = (props: any) => {
                             <i>Bacchus, Hades, Sailor, Psyche, Philemon</i> <br/>
                             <i>Silenus, Sisyphean, Vertumnus, Zeus</i>
                         </div>
-                        <div style={{ textAlign: "right", position: "absolute", marginLeft: "55vw" }}>
+                        <div style={{ textAlign: "right", position: "absolute", marginLeft: "55vmin" }}>
                             Alyse Clinton <br/>
                             Christian "Mish" Culbert <br/>
                             Maddie Elsea <br/>
@@ -153,7 +153,7 @@ export const CreditsView = (props: any) => {
                             Scene Shop <br/> <br/> <br/> <br/>
                             Costume Shop
                         </div>
-                        <div style={{ textAlign: "right", position: "absolute", marginLeft: "55vw" }}>
+                        <div style={{ textAlign: "right", position: "absolute", marginLeft: "55vmin" }}>
                             Herbert Moore <br/> <br/>
                             Mätthew Williams <br/> <br/>
                             Margaret Koerber <br/> <br/>

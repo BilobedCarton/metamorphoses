@@ -1,5 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/database';
+import 'firebase/storage';
+import _ from 'lodash';
  
 const config = {
     apiKey: process.env.REACT_APP_API_KEY,
@@ -9,19 +11,98 @@ const config = {
     storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
     messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 };
+
+const gracePeriod = parseInt(process.env.REACT_APP_GRACE_PERIOD_MS!);
+
+export type ImageMetadata = {
+    title: string;
+    url: string;
+    key: string;
+    time: number;
+}
+
+export type AnswerMetadata = {
+    wish: string;
+    changes: string;
+    drawbacks: string;
+    time: number;
+}
  
 class Firebase {
     db: app.database.Database;
+    storage: app.storage.Storage;
     constructor() {
         app.initializeApp(config);
 
         this.db = app.database();
+        this.storage = app.storage();
     }
 
     /* Ep 1 Database API */
-    ep1Answers = () => this.db.ref("ep1");
-    ep1Answer = (uid: string) => this.db.ref(`ep1/${uid}`)
-    addEp1Answer = (wish: string, changes: string, drawbacks: string) => this.ep1Answers().push({wish, changes, drawbacks});
+    ep1AnswerRefs = () => this.db.ref("ep1");
+
+    ep1Answers = (onDatabaseRequestCompleteCallback: (data: AnswerMetadata[]) => void) => {
+        this.ep1AnswerRefs().on("value", snapshot => {
+            const data = _.reduce(snapshot.val() as Record<string, any>, (acc, v) => {
+                
+                // filter to files posted outside of the last 12 hours (43200000ms)
+                const time = v.time as number;
+                if(time > Date.now() - gracePeriod) return acc;
+
+                acc.push({
+                    wish: v.wish,
+                    changes: v.changes,
+                    drawbacks: v.drawbacks,
+                    time
+                });
+                return acc; 
+            }, [] as AnswerMetadata[]);
+            onDatabaseRequestCompleteCallback(_.sortBy(data, (datum) => -datum.time));
+        });
+        return () => this.ep1AnswerRefs().off();
+    }
+
+    addEp1Answer = (wish: string, changes: string, drawbacks: string) => this.ep1AnswerRefs().push({wish, changes, drawbacks, time: Date.now()});
+
+    /* Ep 2 Database API */
+    ep2ImageMetadataEntryRefs = () => this.db.ref("ep2");
+    ep2ImageMetadataEntryRef = (uid: string) => this.db.ref(`ep2/${uid}`);
+
+    ep2ImageMetadataEntries = (onDatabaseRequestCompleteCallback: (data: ImageMetadata[]) => void) => {
+        this.ep2ImageMetadataEntryRefs().on("value", snapshot => {
+            const data = _.reduce(snapshot.val() as Record<string, any>, (acc, v, k) => {
+
+                // filter to files posted outside of the last 12 hours (43200000ms)
+                const time = v.time as number;
+                if(time > Date.now() - gracePeriod) return acc;
+
+                acc.push({
+                    title: v.title as string,
+                    url: v.url as string,
+                    key: v.key as string,
+                    time
+                });
+                return acc;
+            }, [] as ImageMetadata[]);
+            onDatabaseRequestCompleteCallback(_.sortBy(data, (datum) => -datum.time));
+        });
+        return () => this.ep2ImageMetadataEntryRefs().off()
+    }
+
+    addEp2Image = (img: any, title: string) => {
+        const newMetadataEntry = this.ep2ImageMetadataEntryRefs().push();
+        this.storage.ref(`ep2/${newMetadataEntry.key}`).put(img)
+            .then(() => {
+                return this.storage.ref(`ep2/${newMetadataEntry.key}`).getDownloadURL();
+            })
+            .then((url) => {
+                newMetadataEntry.set({title, url, key: newMetadataEntry.key, time: Date.now()});
+            });
+        return newMetadataEntry.key;
+    }
+
+    ep2ImageFileRef = (uid: string) => this.storage.ref(`ep2/${uid}`);
+    ep2ImageFileUrl = (uid: string) => this.ep2ImageFileRef(uid).getDownloadURL();
 }
  
 export default Firebase;

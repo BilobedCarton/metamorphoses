@@ -6,6 +6,7 @@ import './App.css';
 import { ContextualAnswerView } from './episode1/view/AnswersView';
 import { ContextualEpisode1View } from './episode1/view/Episode1View';
 import { Episode2View } from './episode2/Episode2View';
+import { ContextualNightmareView } from './episode2/NightmareView';
 import { Episode3View } from './episode3/Episode3View';
 import { UnderworldView } from './episode3/Underworld/UnderworldView';
 import { Episode4View } from './episode4/Episode4View';
@@ -70,6 +71,9 @@ function App() {
             </Route>
             <Route exact path={"/cookbook"}>
               <CookbookView/>
+            </Route>
+            <Route exact path={"/nightmares"}>
+              <ContextualNightmareView/>
             </Route>
           </Switch>
         </BrowserRouter>

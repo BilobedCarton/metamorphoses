@@ -4,7 +4,7 @@ import "./program.css"
 
 export const DirectorNoteView = (props: any) => {
     return (
-        <ProgramViewContainer>
+        <ProgramViewContainer style={{height: "100vh"}}>
             <div className="Director-Note">
                 <div className="Director-Note-Title">
                     A NOTE FROM THE DIRECTOR

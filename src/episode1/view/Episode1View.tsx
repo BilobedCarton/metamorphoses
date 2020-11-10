@@ -120,7 +120,7 @@ const Episode1View: FunctionComponent<IEpisode1ViewProps> = (props: IEpisode1Vie
                                         localStorage.setItem("share", event.target.checked ? "true" : "false");
                                     }
                                 }/> 
-                                Share with other audience members
+                                Share with other audience members <br/> <i>(Please note that your submission may not be available until tomorrow.)</i>
                             </label>
                         </div> : null
                     }

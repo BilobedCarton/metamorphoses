@@ -4,11 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Firebase, { FirebaseContext } from './firebase';
+import { Login } from './Login';
 
 ReactDOM.render(
   <React.StrictMode>
     <FirebaseContext.Provider value={new Firebase()}>
-      <App />
+      { true//localStorage.getItem("password") === process.env.REACT_APP_PASSWORD 
+        ? <App />
+        : <Login />
+      }
     </FirebaseContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
