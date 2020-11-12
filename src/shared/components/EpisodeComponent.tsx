@@ -70,7 +70,8 @@ export const  EpisodeComponent: React.FC<IEpisodeComponentProps> = (props) => {
             { props.episodeNumber !== 6 ? <button className={"Episode " + getButtonStyleClass()}
                 style={{ position: "absolute", top: "5vh", right: "5vw" }}
                 onClick={navToNextEpisode}
-            > EPISODE {props.episodeNumber + 1} </button> : null }
+                disabled
+            > EPISODE {props.episodeNumber + 1}</button> : null }
         </div>
     );
 }

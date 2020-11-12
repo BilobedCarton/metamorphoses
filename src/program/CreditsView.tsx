@@ -11,7 +11,7 @@ export const CreditsView = (props: any) => {
 
     return (
         <div>
-            <button className="Program-Button" style={{ position: "absolute", left: "unset", right: "0vw", top: "0vh" }} onClick={() => history.push("/bios")}> BIOS </button>
+            {/* <button className="Program-Button" style={{ position: "absolute", left: "unset", right: "0vw", top: "0vh" }} onClick={() => history.push("/bios")}> BIOS </button> */}
             <ProgramViewContainer style={{ height: "240vh", minHeight: "2500px" }}>
                 <div className="Credits">
                     <p className="Credits-Text-Medium">

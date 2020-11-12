@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Route, Switch } from 'react-router';
+import { Redirect, Route, Switch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import { ContextualAnswerView } from './episode1/view/AnswersView';
@@ -38,28 +38,28 @@ function App() {
             </Route>
             <Route path={"/episode-one/finished=:finished"} component={ContextualEpisode1View}/>
             <Route exact path={"/episode-two"}>
-              <Episode2View/>
+              <Redirect to="/" />
             </Route>
             <Route exact path={"/episode-three"}>
-              <Episode3View/>
+              <Redirect to="/" />
             </Route>
             <Route exact path={"/episode-four"}>
-              <Episode4View/>
+              <Redirect to="/" />
             </Route>
             <Route exact path={"/episode-five"}>
-              <Episode5View/>
+              <Redirect to="/" />
             </Route>
             <Route exact path={"/episode-six"}>
-              <Episode6View/>
+              <Redirect to="/" />
             </Route>
             <Route exact path={"/answers"}>
-              <ContextualAnswerView/>
+              <ContextualAnswerView />
             </Route>
             <Route exact path={"/phaeton"}>
-              <FlappyPhaetonView/>
+              <Redirect to="/" />
             </Route>
             <Route exact path={"/underworld"}>
-              <UnderworldView/>
+              <Redirect to="/" />
             </Route>
             <Route exact path={"/director-note"}>
               <DirectorNoteView/>
@@ -67,18 +67,20 @@ function App() {
             <Route exact path={"/mary-zimmerman"}>
               <AboutTheAuthorView/>
             </Route>
-            <Route path={"/behind-the-scenes/:from"} component={BehindTheScenesView}/>
+            <Route path={"/behind-the-scenes/:from"}>
+              <Redirect to="/" />
+            </Route>
             <Route exact path={"/credits"}>
               <CreditsView/>
             </Route>
             <Route exact path={"/cookbook"}>
-              <CookbookView/>
+              <Redirect to="/" />
             </Route>
             <Route exact path={"/nightmares"}>
-              <ContextualNightmareView/>
+              <Redirect to="/" />
             </Route>
             <Route exact path={"/bios"}>
-              <BiosView/>
+              <Redirect to="/" />
             </Route>
           </Switch>
         </BrowserRouter>

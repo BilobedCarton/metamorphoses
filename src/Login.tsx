@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import "./Login.css";
 
 export const Login = (props: any) => {
-    const [ password, setPassword ] = useState("Unb0xP@nd0r@");
+    const [ password, setPassword ] = useState("");
 
     return (
         <div className="Login-Container">
