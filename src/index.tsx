@@ -9,7 +9,7 @@ import { Login } from './Login';
 ReactDOM.render(
   <React.StrictMode>
     <FirebaseContext.Provider value={new Firebase()}>
-      { true//localStorage.getItem("password") === process.env.REACT_APP_PASSWORD 
+      { localStorage.getItem("password") === process.env.REACT_APP_PASSWORD 
         ? <App />
         : <Login />
       }

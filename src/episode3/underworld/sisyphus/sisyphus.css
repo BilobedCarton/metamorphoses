@@ -17,6 +17,7 @@
     min-width: 214.3px;
 
     border: 2px solid black;
+    outline: none;
 }
 
 .sis-hill {
@@ -60,10 +61,6 @@
 
 }
 
-/* .sis-trans-1 {
-    animation: ;
-} */
-
 .sis-pos-0 {
     left: 0%;
     bottom: 0%;
@@ -71,37 +68,37 @@
 
 .sis-pos-1 {
     left: 20%;
-    bottom: 5%;
+    bottom: 6%;
     transform: rotate(-11deg);
 }
 
 .sis-pos-2 {
     left: 35%;
-    bottom: 12%;
-    transform: rotate(-15deg);
+    bottom: 13%;
+    transform: rotate(-17deg);
 }
 
 .sis-pos-3 {
-    left: 48%;
+    left: 47%;
     bottom: 21%;
-    transform: rotate(-22deg);
+    transform: rotate(-25deg);
 }
 
 .sis-pos-4{
-    left: 62%;
+    left: 63%;
     bottom: 39%;
     transform: rotate(-37deg);
 }
 
 .sis-pos-5 {
     left: 73%;
-    bottom: 60%;
-    transform: rotate(-41deg);
+    bottom: 58%;
+    transform: rotate(-48deg);
 }
 
 .sis-pos-6 {
-    left: 81.5%;
-    bottom: 74%;
+    left: 82.5%;
+    bottom: 73%;
     transform: rotate(-51deg);
 }
 
@@ -113,4 +110,29 @@
 
 .sis-pos-7-rock {
     display: none;
+}
+
+.sis-pos-failure {
+    transition: left 0s, bottom 0s, transform 0s;
+    left: 86.5%;
+    bottom: 86%;
+    transform: rotateY(180deg);
+}
+
+.sis-pos-failure-rock { 
+    animation-name: rock-roll-down-hill;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    left: 650%; 
+    top: 828%;
+}
+
+@keyframes rock-roll-down-hill {
+    0% { left: 10%; top: 67%; }
+    30% { left: 86%; top: 193%; transform: rotate(135deg); }
+    55% { left: 200%; top: 452%; transform: rotate(270deg); }
+    75% { left: 393%; top: 704%; transform: rotate(405deg); }
+    87% { left: 506%; top: 773%; transform: rotate(540deg); }
+    100% { left: 650%; top: 828%; transform: rotate(675deg); }
 }

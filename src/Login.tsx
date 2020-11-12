@@ -13,7 +13,7 @@ export const Login = (props: any) => {
                 <button className="Submit-Button" onClick={() => {
                     localStorage.setItem("password", password);
                     window.location.reload();
-                }}>SUBMIT</button>
+                }}>ENTER</button>
             </div>
         </div>
     )

@@ -27,14 +27,14 @@ export function HubView(props: any) {
                 </div>
                 <EpisodeButtonComponent imgClassName="Ep-Icon Ep-4" textClassName="Ep-Title Ep-Title-Big" titleText="EPISODE FOUR" src={ep4Icon} onClick={() => history.push("/episode-four")}/>
                 <div className="Ep-Icon Ep-5-Container">
-                    <EpisodeButtonComponent imgClassName="Ep-Icon Ep-5" textClassName="Ep-Title Ep-Title-Small" titleText="EPISODE FIVE" src={ep5Icon} onClick={() => history.push("/episode-five")}/>
+                    <EpisodeButtonComponent imgClassName="Ep-Icon Ep-5" textClassName="Ep-Title Ep-Title-5" titleText="EPISODE FIVE" src={ep5Icon} onClick={() => history.push("/episode-five")}/>
                     <div className="Ep-5-Text">
                         <p style={{ marginBottom: "0vmin" }}>WRITTEN AND</p>
                         <p style={{ marginBottom: "0vmin", marginTop: "0vmin" }}>ORIGINALLY DIRECTED BY </p>
                         <b style={{ fontSize: "3.7vmin" }}>MARY ZIMMERMAN</b>
                     </div>
                 </div>
-                <EpisodeButtonComponent imgClassName="Ep-Icon Ep-6" textClassName="Ep-Title Ep-Title-Big" titleText="EPISODE SIX" src={ep6Icon} onClick={() => history.push("/episode-six")}/>
+                <EpisodeButtonComponent imgClassName="Ep-Icon Ep-6" textClassName="Ep-Title Ep-Title-6" titleText="EPISODE SIX" src={ep6Icon} onClick={() => history.push("/episode-six")}/>
             </div>
             <div className="Additional-Credits">
                 <p style={{ margin: "0vmin"}}>DIRECTED BY <b>DESIR&Eacute; BENNETT</b></p>

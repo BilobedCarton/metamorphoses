@@ -12,6 +12,7 @@ export const SisyphusAndRock = (props: ISisyphusAndRockProps) => {
 
     const getClassNameFromPosition = () => {
         switch(props.position) {
+            case -1: return "sis-pos-failure";
             case 0: return "sis-pos-0";
             case 1: return "sis-pos-1";
             case 2: return "sis-pos-2";

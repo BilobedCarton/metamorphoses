@@ -28,7 +28,7 @@
     color: white;
     font-size: 5vmin;
     margin: -20vmin;
-    margin-left: -19vmin;
+    margin-left: -18vmin;
     font-weight: 300;
 }
 
@@ -38,11 +38,22 @@
 }
 
 .Ep-Title-3 {
-    margin-top: -21vmin;
+    margin-top: -20vmin;
+    margin-left: -19vmin;
+}
+
+.Ep-Title-5 {
+    margin-bottom: -16vmin;
+    margin-top: -24vmin;
+    margin-left: -19vmin;
+}
+
+.Ep-Title-6 {
+    margin-top: -30vmin;
 }
 
 .Ep-Title-Big {
-    margin-top: -32vmin;
+    margin-top: -33vmin;
 }
 
 .Ep-2 {
@@ -111,7 +122,7 @@
 
 .Additional-Credits {
     position: fixed;
-    bottom: 8vh;
+    bottom: 7.5vh;
     margin-left: 2vw;
     color: white;
     text-align: left;
@@ -164,20 +175,20 @@
     flex-direction: row;
     flex: 0.24;
     font-weight: 600;
-    font-size: min(2vw, 1rem);
+    font-size: min(2vmin, 1rem);
     background-color: transparent;
     border: 2px solid white;
     color: white;
-    padding: 1vh 1vw;
+    padding: 1vh 0vw;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin: 0.5vw;
+    margin: 0.5vmin;
+    margin-bottom: 0px;
     outline: none;
 }
 
 .Program-Buttons:hover, .Program-Buttons:focus {
     background-color: white;
-    border: 2px solid black;
     color: black;
 }

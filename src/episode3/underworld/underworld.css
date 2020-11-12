@@ -1,0 +1,9 @@
+button.Underworld-Selection-Button {
+    font-size: min(2.5vmax, 1.25rem);
+    color: beige;
+    border: 3px solid beige;
+}
+
+button.Underworld-Selection-Button:hover, button.Underworld-Selection-Button:focus {
+    background-color: black;
+}

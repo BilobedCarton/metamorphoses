@@ -16,7 +16,7 @@ enum GameState {
 const qteTimeShort = 2.00 // 2s;
 const qteTimeLong = 5.00 // 5s
 const qteKeyList = ["a", "s", "d", "w"];
-const mashThreshold = 20;
+const mashThreshold = 30;
 
 export const SisyphusView = (props: any) => {
     const [ sisyphusPosition, setSisyphusPosition ] = useState(0);
@@ -52,6 +52,7 @@ export const SisyphusView = (props: any) => {
 
     const onLoss = () => {
         setGameState(GameState.Lost);
+        if(sisyphusPosition === 6) setSisyphusPosition(-1);
     }
 
     const isGameInProgress = () => {
@@ -63,19 +64,21 @@ export const SisyphusView = (props: any) => {
             startGame();
             return;
         };
-        if(input === qteKey && isGameInProgress()) {
-            if(sisyphusPosition === 6) {
-                if(mashCount >= mashThreshold) onWin();
-                else setMashCount((mc) => mc + 1);
-            } else {
-                if(sisyphusPosition === 5) {
-                    setGameState(GameState.FinalPush);
-                    setQteTimeLeft(qteTimeLong);
-                } else setQteTimeLeft(qteTimeShort);
-                setSisyphusPosition((sp) => sp + 1);
-                
-                setQteKey(generateQteKey());
-            }
+        if(isGameInProgress()) {
+            if(input === qteKey) { 
+                if(sisyphusPosition === 6) {
+                    if(mashCount >= mashThreshold) onWin();
+                    else setMashCount((mc) => mc + 1);
+                } else {
+                    if(sisyphusPosition === 5) {
+                        setGameState(GameState.FinalPush);
+                        setQteTimeLeft(qteTimeLong);
+                    } else setQteTimeLeft(qteTimeShort);
+                    setSisyphusPosition((sp) => sp + 1);
+                    
+                    setQteKey(generateQteKey());
+                }
+            } else if(input !== "m1") onLoss();
         }
     }
 

@@ -6,7 +6,7 @@ export const CreditsView = (props: any) => {
     const history = useHistory();
 
     return (
-        <ProgramViewContainer style={{ height: "220vh" }}>
+        <ProgramViewContainer style={{ height: "220vh", minHeight: "1100px" }}>
             <button className="Program-Button" style={{ position: "fixed", left: "unset", right: "0vw", top: "0vh" }} onClick={() => history.push("/bios")}> Bios </button>
             <div className="Credits">
                 <p className="Credits-Text-Medium">
@@ -122,7 +122,7 @@ export const CreditsView = (props: any) => {
                             <i>Bacchus, Hades, Sailor, Psyche, Philemon</i> <br/>
                             <i>Silenus, Sisyphean, Vertumnus, Zeus</i>
                         </div>
-                        <div style={{ textAlign: "right", position: "absolute", marginLeft: "min(55vmin, 550px)" }}>
+                        <div style={{ textAlign: "right", position: "absolute", right: 0 }}>
                             Alyse Clinton <br/>
                             Christian "Mish" Culbert <br/>
                             Maddie Elsea <br/>
@@ -157,7 +157,7 @@ export const CreditsView = (props: any) => {
                             Scene Shop <br/> <br/> <br/> <br/>
                             Costume Shop
                         </div>
-                        <div style={{ textAlign: "right", position: "absolute", marginLeft: "min(55vmin, 550px)" }}>
+                        <div style={{ textAlign: "right", position: "absolute", right: 0 }}>
                             Herbert Moore <br/> <br/>
                             Mätthew Williams <br/> <br/>
                             Margaret Koerber <br/> <br/>
