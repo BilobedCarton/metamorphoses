@@ -1,0 +1,116 @@
+
+.sisyphus-game-container {
+    position: absolute;
+    left: 50%;
+    margin-left: max(min(-50vmin, -150px), -350px);
+    top: 50%;
+    margin-top: max(min(-35.7vmin, -107.2px), -250px);
+
+    background-color: beige;
+
+    max-width: 700px;
+    width: 100vmin;
+    min-width: 300px;
+
+    max-height: 500px;
+    height: 71.4vmin;
+    min-width: 214.3px;
+
+    border: 2px solid black;
+}
+
+.sis-hill {
+    position: absolute;
+    top: 13.4%;
+    left: 0;
+    width: 100%;
+    height: 86.6%;
+}
+
+.sis-container {
+    position: absolute;
+    left: 10vmin;
+    max-height: 51.3px;
+    height: 10.3vmin;
+    min-height: 23.3px;
+    min-width: 40.3px;
+    width: 13.4vmin;
+    max-width: 94px;
+    transform: rotate(0deg);
+    margin-bottom: -1px;
+    transition: left 1s, bottom 1s, transform 1s;
+}
+
+.sis-figure {
+    position: absolute;
+    min-width: 19.3px;
+    width: 6.4vmin;
+    max-width: 45px;
+    left: 0px;
+    bottom: 0px;
+}
+
+.sis-rock {
+    position: absolute;
+    min-width: 21px;
+    width: 7vmin;
+    max-width: 49px;
+    left: min(max(5vmin, 15.4px), 36px);
+    bottom: 9%;
+
+}
+
+/* .sis-trans-1 {
+    animation: ;
+} */
+
+.sis-pos-0 {
+    left: 0%;
+    bottom: 0%;
+}
+
+.sis-pos-1 {
+    left: 20%;
+    bottom: 5%;
+    transform: rotate(-11deg);
+}
+
+.sis-pos-2 {
+    left: 35%;
+    bottom: 12%;
+    transform: rotate(-15deg);
+}
+
+.sis-pos-3 {
+    left: 48%;
+    bottom: 21%;
+    transform: rotate(-22deg);
+}
+
+.sis-pos-4{
+    left: 62%;
+    bottom: 39%;
+    transform: rotate(-37deg);
+}
+
+.sis-pos-5 {
+    left: 73%;
+    bottom: 60%;
+    transform: rotate(-41deg);
+}
+
+.sis-pos-6 {
+    left: 81.5%;
+    bottom: 74%;
+    transform: rotate(-51deg);
+}
+
+.sis-pos-7 {
+    left: 86.5%;
+    bottom: 86%;
+    transform: rotateY(180deg);
+}
+
+.sis-pos-7-rock {
+    display: none;
+}

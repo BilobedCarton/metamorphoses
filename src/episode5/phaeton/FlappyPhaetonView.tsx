@@ -136,26 +136,32 @@ export const FlappyPhaetonView = (props: any) => {
     const getVictoryStatusText = (status: PlayerVictoryStatus) => {
         switch(status) {
             case PlayerVictoryStatus.Start:
-                return "Press space to begin.";
+                return "Click or press space to fly.";
             case PlayerVictoryStatus.Loss:
-                return "You lost... press space to try again.";
+                return "You lost... click or press space to try again.";
             case PlayerVictoryStatus.InProgress:
             default:
                 return "";
         }
     }
 
+    const onInput = () => {
+        if(!gameStopped) {
+            jump();
+        } else{
+            setGameStopped(false);
+            setPlayerVictoryStatus(PlayerVictoryStatus.InProgress);
+            setPlayerScore(0);
+        }
+    }
+
     return (
-        <div style={{ width: "100vw", height: "100vh", backgroundColor: "black" }} tabIndex={0} onKeyDown={(ev) => {
-            // console.log(ev.key);
-            if(ev.key === " " && !gameStopped) {
-                jump();
-            } else if(ev.key === " ") {
-                setGameStopped(false);
-                setPlayerVictoryStatus(PlayerVictoryStatus.InProgress);
-                setPlayerScore(0);
-            }
-        }}>
+        <div 
+            style={{ width: "100vw", height: "100vh", backgroundColor: "black" }} 
+            tabIndex={1} 
+            onKeyDown={(ev) => { if(ev.key === " ") onInput(); }}
+            onMouseDown={onInput}
+        >
             <div className="game-container" style={{alignContent: "center"}}>
                 <div className="sky" style={{ top: "0px" }}>
                 <video autoPlay muted loop style={{ objectFit: "fill", width: "100%", height: "130%", marginTop: "-11%" }}>

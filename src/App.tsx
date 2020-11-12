@@ -8,7 +8,7 @@ import { ContextualEpisode1View } from './episode1/view/Episode1View';
 import { Episode2View } from './episode2/Episode2View';
 import { ContextualNightmareView } from './episode2/NightmareView';
 import { Episode3View } from './episode3/Episode3View';
-import { UnderworldView } from './episode3/Underworld/UnderworldView';
+import { UnderworldView } from './episode3/underworld/UnderworldView';
 import { Episode4View } from './episode4/Episode4View';
 import { Episode5View } from './episode5/Episode5View';
 import { FlappyPhaetonView } from './episode5/phaeton/FlappyPhaetonView';
@@ -17,6 +17,7 @@ import { Episode6View } from './episode6/Episode6View';
 import { HubView } from './hub/HubView';
 import { AboutTheAuthorView } from './program/AboutTheAuthorView';
 import { BehindTheScenesView } from './program/BehindTheScenesView';
+import { BiosView } from './program/BiosView';
 import { CreditsView } from './program/CreditsView';
 import { DirectorNoteView } from './program/DirectorNoteView';
 
@@ -74,6 +75,9 @@ function App() {
             </Route>
             <Route exact path={"/nightmares"}>
               <ContextualNightmareView/>
+            </Route>
+            <Route exact path={"/bios"}>
+              <BiosView/>
             </Route>
           </Switch>
         </BrowserRouter>

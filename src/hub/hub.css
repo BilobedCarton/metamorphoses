@@ -161,7 +161,8 @@
 }
 
 .Program-Buttons {
-    width: 23vw;
+    flex-direction: row;
+    flex: 0.24;
     font-weight: 600;
     font-size: min(2vw, 1rem);
     background-color: transparent;
