@@ -24,6 +24,7 @@ button.Answer-Nav {
 .Question {
     font-weight: bold;
     font-size: min(4vmin, 1.5rem);
+    max-width: 85vw;
 }
 
 .Answer {

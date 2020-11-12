@@ -6,7 +6,7 @@ export const CreditsView = (props: any) => {
     const history = useHistory();
 
     return (
-        <ProgramViewContainer style={{ height: "220vh", minHeight: "1100px" }}>
+        <ProgramViewContainer style={{ height: "240vh", minHeight: "1200px" }}>
             <button className="Program-Button" style={{ position: "fixed", left: "unset", right: "0vw", top: "0vh" }} onClick={() => history.push("/bios")}> Bios </button>
             <div className="Credits">
                 <p className="Credits-Text-Medium">
@@ -15,8 +15,12 @@ export const CreditsView = (props: any) => {
                     DEPARTMENT OF THEATRE PRESENTS
                 </p>
                 <div>
-                    <p className="Credits-Text-Largest">METAMORPHOSES</p>
-                    <p className="Credits-Text-Larger">by Mary Zimmerman</p>
+                    <p className="Credits-Text-Largest">SCENES FROM <b>METAMORPHOSES</b></p>
+                    <p className="Credits-Text-Larger">
+                        based on the Myths of Ovid <br/>
+                        written and originally directed by <br/>
+                        <b>Mary Zimmerman</b>
+                    </p>
                 </div>
                 <p className="Credits-Text-Large">
                     Directed by
@@ -105,7 +109,7 @@ export const CreditsView = (props: any) => {
                     </i>
                 </div>
                 <div style={{ textAlign: "left", marginTop: "5vmin"}}>
-                    <p className="Credits-Text-Large">CAST</p>
+                    <p className="Credits-Text-Large"><b>CAST</b></p>
                     <div className="Credits-Text-Small" style={{ display: "flex" }}>
                         <div>
                             <i>1st Laundress, Narrator 1, Sailor, Lucina</i> <br/>
@@ -140,29 +144,26 @@ export const CreditsView = (props: any) => {
                     </div>
                 </div>
                 <div style={{ textAlign: "left", marginTop: "5vmin", lineHeight: "1.7vmin"}}>
-                    <p className="Credits-Text-Large">PRODUCTION STAFF</p>
+                    <p className="Credits-Text-Large"><b>PRODUCTION STAFF</b></p>
                     <br/>
                     <div className="Credits-Text-Small" style={{ display: "flex", lineHeight: 1 }}>
                         <div>
-                            Production Coordinator <br/> <br/>
-                            Technical Director <br/> <br/>
-                            Costume Shop Manager <br/> <br/>
-                            Operations Manager <br/> <br/>
-                            Department Chair <br/> <br/>
                             Production Stage Manager <br/> <br/>
                             Prop Director <br/> <br/>
                             Production Assistant <br/> <br/>
                             Video Editing <br/> <br/> <br/>
                             Costume Assistant <br/> <br/>
                             Scene Shop <br/> <br/> <br/> <br/>
-                            Costume Shop
+                            Costume Shop <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+                            Headshot Photography <br/> <br/>
+                            Production Marketing <br/> <br/>
+                            Production Coordinator <br/> <br/>
+                            Technical Director <br/> <br/>
+                            Costume Shop Manager <br/> <br/>
+                            Operations Manager <br/> <br/>
+                            Department Chair
                         </div>
                         <div style={{ textAlign: "right", position: "absolute", right: 0 }}>
-                            Herbert Moore <br/> <br/>
-                            Mätthew Williams <br/> <br/>
-                            Margaret Koerber <br/> <br/>
-                            Marti McIntosh <br/> <br/>
-                            Antonio Ocampo-Guzman <br/> <br/>
                             Erin Solomon <br/> <br/>
                             Miranda Acosta <br/> <br/>
                             Josephine Ojakli <br/> <br/>
@@ -173,13 +174,19 @@ export const CreditsView = (props: any) => {
                             Maddie Elsea <br/>
                             Julian Perez <br/> <br/>
                             Constance Davis <br/>
-                            Rachel Erwin <br/>
                             Maren Flessen <br/>
                             Lara Graber-Mitchell <br/>
                             Rachel Li <br/>
                             Jake Peterson <br/>
                             Brenna Thornton <br/>
-                            Lindsy Weaver <br/>
+                            Lindsy Weaver <br/> <br/>
+                            Shira Weiss <br/> <br/>
+                            Amanda Brea &amp; Sydney Fells <br/> <br/>
+                            Herbert Moore <br/> <br/>
+                            Mätthew Williams <br/> <br/>
+                            Margaret Koerber <br/> <br/>
+                            Marti McIntosh <br/> <br/>
+                            Antonio Ocampo-Guzman <br/> <br/>
                         </div>
                     </div>
                 </div>
