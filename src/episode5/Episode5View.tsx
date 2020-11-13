@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router";
 import { EpisodeComponent } from "../shared/components/EpisodeComponent";
 
-const background = "https://drive.google.com/uc?export=view&id=1yx49LUaKX9pOJ9prC5Br1yK_ZTsp8TFu";
+const background = require("../assets/black.png");// "https://drive.google.com/uc?export=view&id=1yx49LUaKX9pOJ9prC5Br1yK_ZTsp8TFu";
 
 export const Episode5View = (props: any) => {
     const history = useHistory();

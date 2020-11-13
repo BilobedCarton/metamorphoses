@@ -2,7 +2,7 @@ import React from "react";
 import { EpisodeComponent } from "../shared/components/EpisodeComponent";
 import { ContextualEp2InteractiveComponent } from "./components/Ep2InteractiveComponent";
 
-const background = "https://drive.google.com/uc?export=view&id=1JbBoah27ybnj0NO2oxWwIg-8aHnnpZGY";
+const background = require("../assets/ep2.mp4"); // "https://drive.google.com/uc?export=view&id=1JbBoah27ybnj0NO2oxWwIg-8aHnnpZGY";
 
 export const Episode2View = () => {
 

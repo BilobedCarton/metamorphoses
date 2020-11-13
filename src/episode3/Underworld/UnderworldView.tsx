@@ -5,7 +5,7 @@ import { SisyphusView } from "./sisyphus/SisyphusView";
 
 import "./underworld.css";
 
-const background = "https://drive.google.com/uc?export=view&id=1SG5J5kdtaG6MD-O9miXLSy9PYUd4KbTz";
+const background =  require("../../assets/underworld/underworld.mp4"); // "https://drive.google.com/uc?export=view&id=1SG5J5kdtaG6MD-O9miXLSy9PYUd4KbTz";
 
 enum GameSelection {
     None = 0,
@@ -39,7 +39,7 @@ export const UnderworldView = (props: any) => {
         <div>
             <BackgroundVideoComponent src={background} backgroundColor="LightSlateGray"/>
             <button className="Episode Underworld-Selection-Button" onClick={() => history.push("/episode-three")}>RETURN TO THE SURFACE</button>
-            <div style={{ marginTop: "9vh" }}>
+            <div style={{ marginTop: gameSelected === GameSelection.None ? "25vmin" : "0vmin" }}>
                 <button 
                     style={gameSelected === GameSelection.Sisyphus ? highlightedStyle : {}} 
                     className="Episode Underworld-Selection-Button" 

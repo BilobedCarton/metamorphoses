@@ -4,7 +4,7 @@ import Firebase, { withFirebase } from "../../firebase";
 import { EpisodeComponent } from "../../shared/components/EpisodeComponent";
 import { QuestionComponent } from "../components/QuestionComponent";
 
-const background = "https://drive.google.com/uc?export=view&id=1D5-KPp8TzuMPp2zxGFk0_wnL8cGfkf5V";
+const background = require("../../assets/ep1.mp4"); //"https://drive.google.com/uc?export=view&id=1D5-KPp8TzuMPp2zxGFk0_wnL8cGfkf5V";
 
 const Episode1Style: React.CSSProperties = {
     color: "black"

@@ -52,7 +52,7 @@ export const SisyphusView = (props: any) => {
 
     const onLoss = () => {
         setGameState(GameState.Lost);
-        if(sisyphusPosition === 6) setSisyphusPosition(-1);
+        if(sisyphusPosition === 6 && (window.innerWidth >= 710 && window.innerHeight >= 710)) setSisyphusPosition(-1);
     }
 
     const isGameInProgress = () => {
