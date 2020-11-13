@@ -10,7 +10,7 @@ interface IAnswerViewProps {
     firebase: Firebase;
 }
 
-const background = require("../../assets/ep1.mp4");
+const background = "https://drive.google.com/uc?export=view&id=1D5-KPp8TzuMPp2zxGFk0_wnL8cGfkf5V";
 
 const AnswerView : FunctionComponent<IAnswerViewProps> = (props) => {
     const [ answers, setAnswers ] = useState<AnswerMetadata[]>([]);

@@ -5,7 +5,7 @@ import { PhaetonComponent } from "./components/PhaetonComponent";
 import { generateText, gravity, halfGapHeight, startingHorizSpeed, IBirdState, jumpV, maxV, maxX, maxY, PlayerVictoryStatus, startingBirdState, startingDist } from "./domain/PhaetonConstants";
 import "./FlappyPhaeton.css";
 
-const background = require("../../assets/ep5.mp4");
+const background = "https://drive.google.com/uc?export=view&id=1hekBAHZC1-zbXD7S9ZOXsRFIlluPHGpM";
 
 type IObstacleState = {
     y: number;

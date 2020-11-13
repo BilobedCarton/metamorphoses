@@ -47,7 +47,7 @@ export const AboutTheAuthorView = (props: any) => {
                         <br/><br/>
                         Zimmerman is a member of the Lookingglass Theatre Company in
                         Chicago, Illinois and is currently a Professor in Performance Studies
-                        at her alma mater Northwestern University
+                        at her alma mater Northwestern University.
                     </p>
                 </div>
             </div>

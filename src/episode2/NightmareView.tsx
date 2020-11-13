@@ -11,7 +11,7 @@ type INightmareViewProps = {
     firebase: Firebase
 }
 
-const background = require("../assets/ep2.mp4");
+const background = "https://drive.google.com/uc?export=view&id=1JbBoah27ybnj0NO2oxWwIg-8aHnnpZGY";
 
 const NightmareView = (props: INightmareViewProps) => {
     const [ images, setImages ] = useState<ImageMetadata[]>([]);

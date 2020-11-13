@@ -40,9 +40,9 @@ export const CreditsView = (props: any) => {
                             Sound Designer
                         </p>
                         <p className="Credits-Column-Row">
-                            <b>Josephine Ojakli</b>
+                            <b>Julia Chase &amp; Riley Cohen</b>
                             <br/>
-                            Production Assistant
+                            Video Editing
                         </p>
                     </div>
                     <div className="Credits-Column">
@@ -56,27 +56,6 @@ export const CreditsView = (props: any) => {
                             <br/>
                             Digital Experience Designer
                         </p>
-                        <p className="Credits-Column-Row">
-                            <b>Miranda Acosta</b>
-                            <br/>
-                            Props Director
-                        </p>
-                    </div>
-                </div>
-                <p style={{marginTop: 0}} className="Credits-Text-Medium">
-                    <b>Julia Chase &amp; Riley Cohen</b>
-                    <br/>
-                    Video Editing
-                </p>
-                <div className="Credits-Columns Credits-Text-Medium">
-                    <div className="Credits-Column">
-                        <p className="Credits-Column-Row">
-                            <b>Rachel Erwin</b>
-                            <br/>
-                            Costume Assistant
-                        </p>
-                    </div>
-                    <div className="Credits-Column">
                         <p className="Credits-Column-Row">
                             <b>Erin Solomon</b>
                             <br/>

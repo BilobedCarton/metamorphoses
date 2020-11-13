@@ -13,7 +13,7 @@ enum EffectState {
     REVERB = 5
 }
 
-const background = require("../assets/ep4.mp4");
+const background = "https://drive.google.com/uc?export=view&id=1dL9uc_jhBdwxO5W7kDW-U0jDcU71jaDK";
 const sounds: Record<EffectState, string | undefined> = {
     0: undefined,
     1: require("../assets/sounds/ep4/source.mp3"),
