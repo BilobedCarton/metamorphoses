@@ -13,6 +13,7 @@ interface IAnswerViewProps {
 const background = require("../../assets/ep1.mp4"); //"https://drive.google.com/uc?export=view&id=1D5-KPp8TzuMPp2zxGFk0_wnL8cGfkf5V";
 
 const AnswerView : FunctionComponent<IAnswerViewProps> = (props) => {
+    const [ refresh, setRefresh ] = useState(false);
     const [ answers, setAnswers ] = useState<AnswerMetadata[]>([]);
     const [ idx, setIdx ] = useState(-1);
 
@@ -23,7 +24,7 @@ const AnswerView : FunctionComponent<IAnswerViewProps> = (props) => {
             setAnswers(data);
             setIdx(0);
         });
-    }, [props.firebase]);
+    }, [props.firebase, refresh]);
 
     // console.log(answers);
 
@@ -48,6 +49,7 @@ const AnswerView : FunctionComponent<IAnswerViewProps> = (props) => {
         <div>
             <BackgroundVideoComponent src={background} backgroundColor="gold" />
             <button className="Episode Episode-One Answers-Exit" onClick={() => history.push("/episode-one/finished=true")}>EPISODE 1</button>
+            <button className="Episode Episode-One" style={{ marginTop: "5vh" }} onClick={() => setRefresh(!refresh)}> REFRESH </button>
             <p className="Answer-Nav-Text">{idx + 1} / {answers.length}</p>
             <button className="Episode Episode-One Answer-Nav" onClick={() => { setIdx(Math.max(idx - 1, 0)) }}>PREVIOUS</button>
             <button className="Episode Episode-One Answer-Nav" onClick={() => { setIdx(Math.min(idx + 1, answers.length - 1)) }}>NEXT</button>

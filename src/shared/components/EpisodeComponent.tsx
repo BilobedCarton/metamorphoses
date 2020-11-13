@@ -67,11 +67,11 @@ export const  EpisodeComponent: React.FC<IEpisodeComponentProps> = (props) => {
                 style={{ position: "absolute", top: "5vh", left: "5vw" }}
                 onClick={() => history.push("/")}
             > HOME </button>
-            { props.episodeNumber !== 6 ? <button className={"Episode " + getButtonStyleClass()}
+            {/* { props.episodeNumber !== 6 ? <button className={"Episode " + getButtonStyleClass()}
                 style={{ position: "absolute", top: "5vh", right: "5vw" }}
                 onClick={navToNextEpisode}
                 disabled
-            > EPISODE {props.episodeNumber + 1}</button> : null }
+            > EPISODE {props.episodeNumber + 1}</button> : null } */}
         </div>
     );
 }

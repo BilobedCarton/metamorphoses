@@ -70,7 +70,7 @@ const Episode1View: FunctionComponent<IEpisode1ViewProps> = (props: IEpisode1Vie
         return (
             <div style={{ display: small ? "block" : "flex", marginLeft: small ? "25vw" : "5vw", marginBottom: small ? "0" : "3vh" }}>
                 {answers.map((answer, i) => (
-                    <div key={"answer-" + i} style={{ width: small ? "50vw" : "30vw" }}>
+                    <div key={"answer-" + i} style={{ width: small ? "50vw" : "28vw", marginRight: small ? "0vw" : "1vw", marginLeft: small ? "0vw" : "1vw" }}>
                         <b>{Q_STR_ARR[i]}</b>
                         <p>{answer}</p>
                     </div>
@@ -85,7 +85,7 @@ const Episode1View: FunctionComponent<IEpisode1ViewProps> = (props: IEpisode1Vie
             backgroundIsVideo={true}
             backgroundSrc={background}
             videoTitle={"Episode 1"}
-            videoSrc={"https://player.vimeo.com/video/76979871"}
+            videoSrc={"https://player.vimeo.com/video/479080161"}
             episodeNumber={1}    
         >
             {currentQuestion < 3 
