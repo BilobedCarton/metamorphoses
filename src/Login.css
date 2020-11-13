@@ -17,13 +17,14 @@
 
 .Login-Text {
     width: 60vw;
+    font-weight: lighter;
     font-size: max(1.5rem, min(7vmin, 3rem));
     text-align: center;
     color: white;
 }
 
 .Password-Input {
-    margin-top: 20vh;
+    margin-top: 15vh;
     min-width: 250px;
     width: 40vw;
     position: absolute;
@@ -53,7 +54,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin-top: 28vh;
+    margin-top: 23vh;
     margin-left: 20vw;
     margin-right: 20vw;
     outline: none;

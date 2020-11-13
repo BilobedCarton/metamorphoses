@@ -8,7 +8,7 @@ export const Login = (props: any) => {
     return (
         <div className="Login-Container">
             <div className="Login-Section">
-                <div><b className="Login-Text"> SCENES FROM METAMORPHOSES </b></div>
+                <p className="Login-Text">SCENES FROM <br/><b> METAMORPHOSES </b></p>
                 <input className="Password-Input" type="text" value={password} placeholder="ENTER PASSWORD" onChange={(event) => setPassword(event.target.value)}/>
                 <button className="Submit-Button" onClick={() => {
                     localStorage.setItem("password", password);
