@@ -9,6 +9,8 @@ type IObstacleComponentProps = {
     textBottom: string;
 }
 
+const column = require("../../../assets/phaeton/pillar_plain.svg");
+
 export const ObstacleComponent = (props: IObstacleComponentProps) => {
     return (
         <div className="obstacle-container" style={{ left: (props.x) + "px" }}>
@@ -17,9 +19,13 @@ export const ObstacleComponent = (props: IObstacleComponentProps) => {
                 top: "-10px", 
                 height: (props.y - (halfGapHeight - 10)) + "px" 
             }}>
+                <div className="obstacle-image"/>
                 <p className="obstacle-text" style={{
                     color: props.x > 700 ? "black" : "white",
-                    marginTop: (props.y - (2 * halfGapHeight - 10)) + "px"
+                    top: "20%",
+                    left: "-10%",
+                    // lineHeight: 1
+                    // marginTop: (props.y - (2 * halfGapHeight - 10)) + "px"
                 }}>{props.textTop}</p>
             </div>
             <div className="obstacle" style={{ 
@@ -27,9 +33,11 @@ export const ObstacleComponent = (props: IObstacleComponentProps) => {
                 bottom: "-500px", 
                 height: (500 - (props.y + halfGapHeight)) + "px" 
             }}>
+                <div className="obstacle-image"/>
                 <p className="obstacle-text" style={{
                     color: props.x > 700 ? "black" : "white",
-                    marginTop: (500 - (props.y + 1.75 * halfGapHeight))
+                    top: "32%",
+                    left: "-17%"
                 }}>{props.textBottom}</p>
             </div>
         </div>

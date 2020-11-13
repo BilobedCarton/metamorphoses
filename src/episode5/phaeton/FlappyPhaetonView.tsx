@@ -30,14 +30,14 @@ export const FlappyPhaetonView = (props: any) => {
 
     // return true if we've collided with the floor, ceiling or obstacle
     function checkCollision() {
-        if(birdState.y <= 0 || birdState.y >= maxY) {
+        if(birdState.y <= -30 || birdState.y >= maxY) {
             return true;
         }
-        if(distanceToFirstObstacle <= 15 && distanceToFirstObstacle >= -50
-            && (birdState.y < obstacleList[0].y - (5 + halfGapHeight)
-                || birdState.y + 10 > obstacleList[0].y + halfGapHeight)
+        if(distanceToFirstObstacle <= 50 && distanceToFirstObstacle >= -40
+            && (birdState.y + 15 < obstacleList[0].y - (5 + halfGapHeight)
+                || birdState.y + 20 > obstacleList[0].y + halfGapHeight)
         ) {
-            // console.log(`dist: ${distanceToFirstObstacle}, y: ${birdState.y}, top: ${obstacleList[0].y - (halfGapHeight - 10)}, bottom: ${obstacleList[0].y + halfGapHeight}`);
+            // console.log(`dist: ${distanceToFirstObstacle}, y: ${birdState.y}, top: ${obstacleList[0].y - (halfGapHeight + 5)}, bottom: ${obstacleList[0].y + halfGapHeight}`);
             return true; 
         }
         return false;
@@ -67,7 +67,7 @@ export const FlappyPhaetonView = (props: any) => {
             // update position
             y += v;
             x = Math.min(Math.max(x, 0), maxX);
-            y = Math.min(Math.max(y, 0), maxY);
+            y = Math.min(Math.max(y, -30), maxY);
 
             return {
                 x,
@@ -110,6 +110,7 @@ export const FlappyPhaetonView = (props: any) => {
     } else if(distanceToFirstObstacle < -150) {
         setObstacleList((ol) => {
             const newOL = ol.slice(1);
+            console.log(newOL);
             return newOL;
         });
         setDistanceToFirstObstacle((dist) => {

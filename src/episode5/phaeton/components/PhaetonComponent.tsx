@@ -1,6 +1,8 @@
 import React from "react";
 import "../FlappyPhaeton.css";
 
+const chariot = require("../../../assets/phaeton/chariot.svg");
+
 type IPhaetonComponentProps = {
     posX: number;
     posY: number;
@@ -8,6 +10,6 @@ type IPhaetonComponentProps = {
 
 export const PhaetonComponent = (props: IPhaetonComponentProps) => {
     return (
-        <div className="bird" style={{top: props.posY + "px", left: props.posX + "px"}}></div>
+        <img className="bird" src={chariot} style={{top: props.posY + "px", left: props.posX + "px"}}/>
     )
 }

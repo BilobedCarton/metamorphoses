@@ -2,6 +2,10 @@ import React from "react"
 import { useHistory } from "react-router"
 import { ProgramViewContainer } from "./components/ProgramViewContainer"
 
+
+// Chariot and Horse by Andrew Doane from the Noun Project
+
+
 export const CreditsView = (props: any) => {
     const history = useHistory();
 
