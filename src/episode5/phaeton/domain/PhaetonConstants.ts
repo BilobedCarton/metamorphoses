@@ -13,12 +13,12 @@ export enum PlayerVictoryStatus {
 }
 
 export const gravity = 10 / 60;
-export const jumpV = -6;
-export const startingHorizSpeed = 0 //1.1;
+export const jumpV = -5;
+export const startingHorizSpeed = 1.4;
 
 export const maxY = 480;
 export const maxX = 680;
-export const maxV = 0 // 8;
+export const maxV = 7;
 export const startingBirdState: IBirdState = {
     x: 100,
     y: 240,

@@ -6,6 +6,7 @@
     left: 50%;
     margin-top: -250px;
     margin-left: -350px;
+    overflow: hidden;
 }
 
 .sky {
@@ -43,11 +44,8 @@
 }
 
 .obstacle {
-    width: 50px;
+    width: 100%;
     position: absolute;
-    overflow: hidden;
-    /* background-image: url("../../assets/phaeton/pillar_detail.svg"); */
-    /* background-color: black; */
 }
 
 .obstacle-text {
@@ -57,12 +55,14 @@
     font-weight: bold;
     transform: rotate(-90deg);
     white-space: nowrap;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .obstacle-image {
     position: absolute;
     left: 0;
-    background: url("../../assets/phaeton/pillar_plain.svg");
+    background: url("../../assets/phaeton/long_detailed.svg");
     width: 50px;
     background-repeat: repeat-y;
     background-size: cover;
@@ -73,6 +73,8 @@
 .obstacle-container {
     position: absolute;
     top: 0px;
+    width: 50px;
+    height: 500px;
 }
 
 .score {

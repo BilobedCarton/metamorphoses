@@ -35,7 +35,7 @@ export const FlappyPhaetonView = (props: any) => {
         }
         if(distanceToFirstObstacle <= 50 && distanceToFirstObstacle >= -40
             && (birdState.y + 15 < obstacleList[0].y - (5 + halfGapHeight)
-                || birdState.y + 20 > obstacleList[0].y + halfGapHeight)
+                || birdState.y + 30 > obstacleList[0].y + halfGapHeight)
         ) {
             // console.log(`dist: ${distanceToFirstObstacle}, y: ${birdState.y}, top: ${obstacleList[0].y - (halfGapHeight + 5)}, bottom: ${obstacleList[0].y + halfGapHeight}`);
             return true; 
@@ -110,7 +110,6 @@ export const FlappyPhaetonView = (props: any) => {
     } else if(distanceToFirstObstacle < -150) {
         setObstacleList((ol) => {
             const newOL = ol.slice(1);
-            console.log(newOL);
             return newOL;
         });
         setDistanceToFirstObstacle((dist) => {
@@ -118,6 +117,8 @@ export const FlappyPhaetonView = (props: any) => {
         });
         setScoredClosestObstacle(false);
     }
+    
+    const keyEvent = (event: KeyboardEvent) => { if(event.key === " ") jump(); };
     
     if(checkCollision()) {
         // set high score
@@ -132,6 +133,7 @@ export const FlappyPhaetonView = (props: any) => {
         setDistanceToFirstObstacle(startingDist);
         setHorizontalSpeed(startingHorizSpeed);
         setScoredClosestObstacle(false);
+        window.removeEventListener("keydown", keyEvent);
     }
 
     const getVictoryStatusText = (status: PlayerVictoryStatus) => {
@@ -153,6 +155,7 @@ export const FlappyPhaetonView = (props: any) => {
             setGameStopped(false);
             setPlayerVictoryStatus(PlayerVictoryStatus.InProgress);
             setPlayerScore(0);
+            window.addEventListener("keydown", keyEvent);
         }
     }
 

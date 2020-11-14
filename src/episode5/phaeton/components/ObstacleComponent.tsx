@@ -19,26 +19,27 @@ export const ObstacleComponent = (props: IObstacleComponentProps) => {
                 top: "-10px", 
                 height: (props.y - (halfGapHeight - 10)) + "px" 
             }}>
-                <div className="obstacle-image"/>
-                <p className="obstacle-text" style={{
+                <div className="obstacle-image" style={{ transform: "rotateX(-180deg)" }} />
+                {/* <p className="obstacle-text" style={{
+                    width: "100%",
                     color: props.x > 700 ? "black" : "white",
-                    top: "20%",
-                    left: "-10%",
+                    top: "20px",
+                    left: "-50%",
                     // lineHeight: 1
                     // marginTop: (props.y - (2 * halfGapHeight - 10)) + "px"
-                }}>{props.textTop}</p>
+                }}>{props.textTop}</p> */}
             </div>
             <div className="obstacle" style={{ 
                 textAlign: "center", 
-                bottom: "-500px", 
+                bottom: "0%", 
                 height: (500 - (props.y + halfGapHeight)) + "px" 
             }}>
                 <div className="obstacle-image"/>
-                <p className="obstacle-text" style={{
+                {/* <p className="obstacle-text" style={{
                     color: props.x > 700 ? "black" : "white",
                     top: "32%",
                     left: "-17%"
-                }}>{props.textBottom}</p>
+                }}>{props.textBottom}</p> */}
             </div>
         </div>
     )
