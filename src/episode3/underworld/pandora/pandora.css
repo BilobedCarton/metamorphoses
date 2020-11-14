@@ -1,0 +1,121 @@
+.Pandora-Game-Container {
+    overflow: hidden;
+    background-color: black;
+    background-image: url("../../../assets/underworld/Background.svg");
+    background-size: cover;
+
+    position: absolute;
+    left: 50%;
+    margin-left: max(min(-50vmin, -150px), -350px);
+    top: 50%;
+    margin-top: max(min(-35.7vmin, -107.2px), -250px);
+
+    max-width: 700px;
+    width: 100vmin;
+    min-width: 300px;
+
+    max-height: 500px;
+    height: 71.4vmin;
+    min-height: 214.3px;
+
+    border: 3px solid black;
+}
+
+.Pandora-Stars {
+    position: absolute;
+    top: 6%;
+    left: 0%;
+    width: 83%;
+}
+
+.Pandora-Figure {
+    position: absolute;
+    height: 104%;
+    right: calc(60 / 700 * -100%);
+    top: -4%;
+}
+
+.Pandora-Box {
+    position: absolute;
+    width: calc(3 / 7 * 100%);
+    bottom: 0%;
+    left: 50%;
+    margin-left: calc(3 / 14 * -100%);
+}
+
+.Pandora-Guide-Text {
+    position: absolute;
+    left: 2%;
+    font-size: min(max(2vmin, 0.5rem), 1.1rem);
+    text-align: left;
+    width: 65%
+}
+
+.Pandora-Victory-Text {
+    position: absolute;
+    left: 10%;
+    width: 60%;
+    font-size: min(max(3vmin, 0.6rem), 1.5rem);
+}
+
+.Pandora-Bug {
+    cursor: pointer;
+    position: absolute;
+
+    max-width: 35px;
+    width: 5vmin;
+    min-width: 15px;
+
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    transition: left 0.5s, top 0.5s, transform 1s;
+}
+
+@keyframes Bug-Hover-1 {
+    0% { }
+    25% { margin-left: 2%; transform: rotate(-45deg); }
+    50% { margin-left: 2%; margin-top: 2%; }
+    75% { margin-top: 2%; transform: rotate(45deg); }
+    100% { }
+}
+
+@keyframes Bug-Hover-2 {
+    0% { }
+    25% { margin-right: 2%; transform: rotate(50deg); }
+    50% { margin-left: 2%; margin-top: 2%; transform: rotate(135deg); }
+    75% { margin-bottom: 2%; transform: rotate(60deg); }
+    100% { }
+}
+
+@keyframes Bug-Hover-3 {
+    0% { }
+    25% { margin-left: 3%; transform: rotate(10deg); }
+    75% { margin-bottom: 2%; transform: rotate(-15deg);}
+    100% { }
+}
+
+@keyframes Bug-Hover-4 {
+    0% { }
+    40% { margin-top: 3%; transform: rotate(-90deg); }
+    60% { margin-left: 1%; margin-top: -2%; transform: rotate(-180deg);}
+    80% { margin-top: 3%; transform: rotate(-215deg); }
+    100% {transform: rotate(-360deg); }
+}
+
+@keyframes Bug-Hover-5 {
+    0% { }
+    33% { margin-right: 1%; }
+    66% { margin-left: 2%; margin-top: -3%; }
+    75% { margin-bottom: 1%; }
+    100% { }
+}
+
+@keyframes Bug-Hover-6 {
+    0% { }
+    25% { margin-left: 2%; }
+    50% { margin-bottom: -3%; }
+    75% { margin-right: 2%; }
+    100% { }
+}

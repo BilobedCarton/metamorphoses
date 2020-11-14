@@ -6,7 +6,8 @@
     top: 50%;
     margin-top: max(min(-35.7vmin, -107.2px), -250px);
 
-    background-color: beige;
+    background-image: url("../../../assets/underworld/SisyphusBackground.jpg");
+    background-size: cover;
 
     max-width: 700px;
     width: 100vmin;
@@ -18,6 +19,10 @@
 
     border: 2px solid black;
     outline: none;
+}
+
+.sis-text {
+    font-size: min(max(3vmin, 0.6rem), 1.5rem);
 }
 
 .sis-hill {

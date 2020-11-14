@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router";
 import { BackgroundVideoComponent } from "../shared/components/BackgroundVideoComponent";
 
-const background = require("../assets/ep6.mp4"); // "https://drive.google.com/uc?export=view&id=18GTrF1c3t8Vpru1lKMbfjhrIlsusX2Bi";
+const background = require("../assets/ep6.MP4"); // "https://drive.google.com/uc?export=view&id=18GTrF1c3t8Vpru1lKMbfjhrIlsusX2Bi";
 
 export const CookbookView = (props: any) => {
     const history = useHistory();

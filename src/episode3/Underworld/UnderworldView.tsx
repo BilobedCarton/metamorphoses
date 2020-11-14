@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router"
 import { BackgroundVideoComponent } from "../../shared/components/BackgroundVideoComponent";
+import { PandoraView } from "./pandora/PandoraView";
 import { SisyphusView } from "./sisyphus/SisyphusView";
 
 import "./underworld.css";
@@ -24,14 +25,9 @@ export const UnderworldView = (props: any) => {
 
     const renderGame = () => {
         switch(gameSelected) {
-            case GameSelection.None: return (
-                <div style={{ color: "beige", width: "40vw", textAlign: "center", marginLeft: "30vw", marginBottom: "4vh" }}>
-                    <p>
-                        The underworld is full of tormented souls being punished for their transgressions against the gods. You could ease their suffering by helping them, but can you overcome their impossible tasks?
-                    </p>
-                </div>);
+            case GameSelection.None: return null;
             case GameSelection.Sisyphus: return <SisyphusView/>;
-            case GameSelection.Pandora: return <div></div>;
+            case GameSelection.Pandora: return <PandoraView/>;
         }
     }
 
@@ -39,7 +35,14 @@ export const UnderworldView = (props: any) => {
         <div>
             <BackgroundVideoComponent src={background} backgroundColor="LightSlateGray"/>
             <button className="Episode Underworld-Selection-Button" onClick={() => history.push("/episode-three")}>RETURN TO THE SURFACE</button>
-            <div style={{ marginTop: gameSelected === GameSelection.None ? "25vmin" : "0vmin" }}>
+            { gameSelected === GameSelection.None
+                ? <div style={{ color: "beige", width: "40vw", textAlign: "center", marginLeft: "30vw", marginBottom: "0vh", fontSize: "min(3vmin, 2rem)", marginTop: "25vmin"}}>
+                    <p>
+                        The underworld is full of tormented souls being punished for their transgressions against the gods. You could ease their suffering by helping them, but can you overcome their impossible tasks?
+                    </p>
+                </div> : null
+            }
+            <div style={{ marginTop: gameSelected === GameSelection.None ? "5vmin" : "0vmin" }}>
                 <button 
                     style={gameSelected === GameSelection.Sisyphus ? highlightedStyle : {}} 
                     className="Episode Underworld-Selection-Button" 
