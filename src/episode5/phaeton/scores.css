@@ -1,0 +1,55 @@
+
+.Score-Button:hover, .Score-Button:focus {
+    background-color: black;
+    border: 3px solid darkorange;
+    color: darkorange;
+}
+
+.Scores-Personal {
+    margin-top: 15vh;
+    font-size: large;
+}
+
+.Scores-Name-Input {
+    background: transparent;
+    outline: none;
+    border: 3px solid black;
+    padding: 1vmax;
+    font-size: min(2vmax, 1.25rem);
+}
+
+.Scores-Name-Input:hover, .Scores-Name-Input:focus {
+    background: black;
+    border: 3 px solid darkorange;
+    color: darkorange;
+}
+
+.Scores-General {
+    margin-top: 5vh;
+    font-size: min(3vmax, 2rem);
+}
+
+.Score-Entry {
+    position: relative;
+    font-size: min(3vmin, 1.5rem);
+    width: 250px;
+    min-height: 1.5rem;
+    height: 3vmin;
+    margin-left: -125px;
+    left: 50%;
+    line-height: 1;
+    margin-top: 1vmin;
+    margin-bottom: 1vmin;
+}
+
+.Score-Entry-Name {
+    position: absolute;
+    text-align: left;
+    left: 0%;
+}
+
+.Score-Entry-Score {
+    position: absolute;
+    text-align: right;
+    right: 0%
+}

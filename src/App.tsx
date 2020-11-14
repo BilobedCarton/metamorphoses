@@ -12,6 +12,7 @@ import { UnderworldView } from './episode3/underworld/UnderworldView';
 import { Episode4View } from './episode4/Episode4View';
 import { Episode5View } from './episode5/Episode5View';
 import { FlappyPhaetonView } from './episode5/phaeton/FlappyPhaetonView';
+import { ContextualHighScoresView } from './episode5/phaeton/HighScoresView';
 import { CookbookView } from './episode6/CookbookView';
 import { Episode6View } from './episode6/Episode6View';
 import { HubView } from './hub/HubView';
@@ -79,6 +80,9 @@ function App() {
             </Route>
             <Route exact path={"/bios"}>
               <BiosView/>
+            </Route>
+            <Route exact path={"/scores"}>
+              <ContextualHighScoresView/>
             </Route>
           </Switch>
         </BrowserRouter>

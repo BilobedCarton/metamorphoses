@@ -9,8 +9,6 @@ type IObstacleComponentProps = {
     textBottom: string;
 }
 
-const column = require("../../../assets/phaeton/pillar_plain.svg");
-
 export const ObstacleComponent = (props: IObstacleComponentProps) => {
     return (
         <div className="obstacle-container" style={{ left: (props.x) + "px" }}>

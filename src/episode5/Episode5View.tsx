@@ -16,15 +16,21 @@ export const Episode5View = (props: any) => {
             videoSrc={"https://player.vimeo.com/video/76979871"}
             episodeNumber={5}    
         >
-            <b style={{textAlign: "center", fontSize: "large"}}>
+            <b style={{textAlign: "center", fontSize: "large", lineHeight: 1}}>
                 Can you beat:
                 <p style={{fontSize: "xx-large"}}><i>P H A E T O N ?</i></p>
                 <p> High Score: 7</p>
             </b>
+            <div>
+                <button 
+                    className="Episode Episode-Five"
+                    onClick={() => history.push("/phaeton")}
+                ><b>S T A R T</b></button>
+            </div>
             <button 
                 className="Episode Episode-Five"
-                onClick={() => history.push("/phaeton")}
-            ><b>S T A R T</b></button>
+                onClick={() => history.push("/scores")}
+            ><b>VIEW HIGHSCORES</b></button>
         </EpisodeComponent>
     );
 }

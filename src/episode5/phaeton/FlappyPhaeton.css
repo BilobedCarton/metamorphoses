@@ -1,10 +1,14 @@
+.Phaeton-Container {
+    width: 100vw;
+    height: 100vh;
+}
+
 .game-container {
     width: 700px;
     height: 500px;
-    position: fixed;
-    top: 50%;
+    position: absolute;
+    top: max(20%, 125px);
     left: 50%;
-    margin-top: -250px;
     margin-left: -350px;
     overflow: hidden;
 }
@@ -80,7 +84,7 @@
 .score {
     display: block;
     position: fixed;
-    top: 3vh;
+    top: 10%;
     width: 300px;
     left: 50%;
     margin-left: -150px;

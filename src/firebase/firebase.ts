@@ -27,6 +27,11 @@ export type AnswerMetadata = {
     drawbacks: string;
     time: number;
 }
+
+export type ScoreMetadata = {
+    name: string;
+    score: number;
+}
  
 class Firebase {
     db: app.database.Database;
@@ -103,6 +108,29 @@ class Firebase {
 
     ep2ImageFileRef = (uid: string) => this.storage.ref(`ep2/${uid}`);
     ep2ImageFileUrl = (uid: string) => this.ep2ImageFileRef(uid).getDownloadURL();
+
+    /* Ep 5 Database API */
+    ep5ScoreEntryRefs = () => this.db.ref("ep5");
+    ep5ScoreEntryRef = (uid: string) => this.db.ref(`ep5/${uid}`);
+
+    ep5ScoreEntries = (onDatabaseRequestCompleteCallback: (data: ScoreMetadata[]) => void) => {
+        this.ep5ScoreEntryRefs().on("value", snapshot => {
+            console.log(snapshot.val());
+            const data = _.reduce(snapshot.val() as Record<string, any>, (acc, v) => {
+                acc.push({
+                    name: v.name as string,
+                    score: parseInt(v.score as string)
+                })
+                return acc;
+            }, [] as ScoreMetadata[]);
+            onDatabaseRequestCompleteCallback(_.sortBy(data, (datum) => -datum.score));
+        });
+        return () => this.ep5ScoreEntryRefs().off();
+    }
+
+    addEp5Score = (name: string, score: number) => {
+        this.ep5ScoreEntryRefs().push({ name, score })
+    }
 }
  
 export default Firebase;
