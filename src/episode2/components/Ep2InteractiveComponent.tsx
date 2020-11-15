@@ -45,6 +45,7 @@ const Ep2InteractiveComponent = (props: IEp2InteractiveComponentProps) => {
             let imageMetadata: ImageMetadata | null = null;
             props.firebase.ep2ImageMetadataEntryRef(imageUid!).on("value", (snapshot) => {
                 imageMetadata = snapshot.val();
+                if(imageMetadata === null) return;
                 setTitle(imageMetadata!.title);
                 props.firebase.ep2ImageFileRef(imageMetadata!.key).getDownloadURL().then((url) => setImage(url));
                 setDone(true);

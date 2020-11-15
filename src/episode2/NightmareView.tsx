@@ -15,6 +15,7 @@ const background = require("../assets/ep2.mp4"); // "https://drive.google.com/uc
 
 const NightmareView = (props: INightmareViewProps) => {
     const [ images, setImages ] = useState<ImageMetadata[]>([]);
+    const [ refresh, setRefresh ] = useState(false);
 
     const history = useHistory();
 
@@ -24,13 +25,14 @@ const NightmareView = (props: INightmareViewProps) => {
         });
 
         return cleanupFunction;
-    }, [props.firebase])
+    }, [props.firebase, refresh])
 
     return (
         <div>
             <BackgroundVideoComponent src={background} backgroundColor={"royalblue"}/>
             <button className= "Episode Episode-Two Nightmare-Nav" onClick={() => history.push("/episode-two")}>EPISODE 2</button>
             <div className="Nightmare-Title"><b>NIGHTMARES</b></div>
+            <button className="Episode Episode-Two" onClick={() => setRefresh(true)} style={{ fontSize: "min(2.5vmax, 1.25rem)" }}> REFRESH </button>
             <NightmareListComponent items={images}/>
         </div>
     )

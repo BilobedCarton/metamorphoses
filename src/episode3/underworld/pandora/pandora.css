@@ -7,7 +7,7 @@
     position: absolute;
     left: 50%;
     margin-left: max(min(-50vmin, -150px), -350px);
-    top: 50%;
+    top: 53%;
     margin-top: max(min(-35.7vmin, -107.2px), -250px);
 
     max-width: 700px;
@@ -31,7 +31,7 @@
 .Pandora-Figure {
     position: absolute;
     height: 104%;
-    right: calc(60 / 700 * -100%);
+    right: calc(61 / 700 * -100%);
     top: -4%;
 }
 

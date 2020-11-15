@@ -16,12 +16,12 @@ export const FlappyPhaetonView = (props: any) => {
             <button 
                 className="Episode Episode-Five" 
                 onClick={() => history.push("/episode-five")}
-                style={{ position: "fixed", left: "5vh", top: "5vw" }}
+                style={{ position: "fixed", left: "5vw", top: "5vh" }}
             > Quit </button>
             <button 
                 className="Episode Episode-Five" 
                 onClick={() => history.push("/scores")}
-                style={{ position: "fixed", right: "5vh", top: "5vw" }}
+                style={{ position: "fixed", right: "5vw", top: "5vh" }}
             > High Scores </button>
             <div className="score" style={{ marginTop: "-5vh" }}>
                 <p className="score-item">{isNaN(playerHighScore) ? "" : `Personal best: ${playerHighScore}`}</p>

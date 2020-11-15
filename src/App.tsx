@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Route, Switch } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import './App.css';
 import { ContextualAnswerView } from './episode1/view/AnswersView';
 import { ContextualEpisode1View } from './episode1/view/Episode1View';
@@ -32,7 +32,7 @@ function App() {
       // width: "100vw",
     }}>
       <div>
-        <BrowserRouter>
+        <HashRouter>
           <Switch>
             <Route exact path={"/"}>
               <HubView/>
@@ -85,7 +85,7 @@ function App() {
               <ContextualHighScoresView/>
             </Route>
           </Switch>
-        </BrowserRouter>
+        </HashRouter>
       </div>
     </div>
   );

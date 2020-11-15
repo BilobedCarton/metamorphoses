@@ -3,7 +3,7 @@
     position: absolute;
     left: 50%;
     margin-left: max(min(-50vmin, -150px), -350px);
-    top: 50%;
+    top: 53%;
     margin-top: max(min(-35.7vmin, -107.2px), -250px);
 
     background-image: url("../../../assets/underworld/SisyphusBackground.jpg");
