@@ -44,7 +44,7 @@ export function HubView(props: any) {
             <div className="Program-Button-Container">
                 <button className="Program-Buttons" onClick={() => history.push("/director-note")}>DIRECTOR'S NOTE</button>
                 <button className="Program-Buttons" onClick={() => history.push("/mary-zimmerman")}>ABOUT THE PLAYWRIGHT</button>
-                <button className="Program-Buttons" onClick={() => history.push("/behind-the-scenes/home")}>BEHIND THE SCENES</button>
+                {/* <button className="Program-Buttons" onClick={() => history.push("/behind-the-scenes/home")}>BEHIND THE SCENES</button> */}
                 <button className="Program-Buttons" onClick={() => history.push("/credits")}>CREDITS</button>
             </div>
         </div>

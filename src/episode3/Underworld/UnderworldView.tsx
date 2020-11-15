@@ -34,7 +34,7 @@ export const UnderworldView = (props: any) => {
     return (
         <div>
             <BackgroundVideoComponent src={background} backgroundColor="LightSlateGray"/>
-            <button className="Episode Underworld-Selection-Button" onClick={() => history.push("/episode-three")}>RETURN TO THE SURFACE</button>
+            <button className="Episode Underworld-Selection-Button" onClick={() => history.push("/episode-three")} style={{ marginTop: "3vmin" }}>RETURN TO THE SURFACE</button>
             { gameSelected === GameSelection.None
                 ? <div style={{ color: "beige", width: "40vw", textAlign: "center", marginLeft: "30vw", marginBottom: "0vh", fontSize: "min(3vmin, 2rem)", marginTop: "25vmin"}}>
                     <p>

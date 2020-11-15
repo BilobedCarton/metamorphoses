@@ -11,7 +11,11 @@ type IObstacleState = {
     bottom: string;
 }
 
-export const FlappyPhaetonGameView = (props: any) => {
+type IFlappyPhaetonGameViewProps = {
+    onHighScoreChangeCallback: (value: number) => void;
+}
+
+export const FlappyPhaetonGameView = (props: IFlappyPhaetonGameViewProps) => {
     const [ gameStopped, setGameStopped ] = useState(true);
     const [ playerVictoryStatus, setPlayerVictoryStatus ] = useState<PlayerVictoryStatus>(PlayerVictoryStatus.Start);
     const [ birdState, setBirdState ] = useState<IBirdState>(startingBirdState);
@@ -119,7 +123,7 @@ export const FlappyPhaetonGameView = (props: any) => {
     if(checkCollision()) {
         // set high score
         if(isNaN(playerHighScore) || playerScore > playerHighScore) {
-            localStorage.setItem("phaetonHighScore", "" + playerScore);
+            props.onHighScoreChangeCallback(playerScore);
         }
 
         setBirdState(startingBirdState);
@@ -182,6 +186,7 @@ export const FlappyPhaetonGameView = (props: any) => {
                     })}
                 </div>
             </div>
+            <p style={{ color: "darkorange", position: "absolute", bottom: "0%", left: "50%", textAlign: "center", width: "34%", marginLeft: "-17%" }}> Chariot and Horse by Andrew Doane from the Noun Project </p>
             {playerVictoryStatus !== PlayerVictoryStatus.InProgress ? <div className="game-overlay game-container">
                 <b className="victory-display">{getVictoryStatusText(playerVictoryStatus)}</b>
             </div> : null}

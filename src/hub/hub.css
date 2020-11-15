@@ -173,9 +173,11 @@
 
 .Program-Buttons {
     flex-direction: row;
-    flex: 0.24;
+    /* flex: 0.24; */
+    flex: 0.32;
     font-weight: 600;
-    font-size: min(2vmin, 1rem);
+    /* font-size: min(2vmin, 1rem); */
+    font-size: min(2.5vmin, 1.15rem);
     background-color: transparent;
     border: 2px solid white;
     color: white;

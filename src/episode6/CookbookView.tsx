@@ -19,7 +19,7 @@ export const CookbookView = (props: any) => {
                 allowFullScreen 
                 allow="fullscreen" 
                 style={{ border: "none", width: "70vmin", height: "70vmin" }} 
-                src="//e.issuu.com/embed.html?backgroundColor=%00000000&backgroundColorFullscreen=%00000000&d=orange_juice_issue_1_b0ceb817d77d59&hideIssuuLogo=true&hideShareButton=true&pageNumber=1&u=ds_demo">
+                src="//e.issuu.com/embed.html?backgroundColor=%00000000&backgroundColorFullscreen=%00000000&d=meta_cookbook&hideIssuuLogo=true&hideShareButton=true&pageNumber=1&u=erinmsolomon">
             </iframe>
         </div>
     )

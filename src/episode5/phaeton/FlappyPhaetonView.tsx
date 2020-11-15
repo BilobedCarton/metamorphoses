@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { BackgroundImageComponent } from "../../shared/components/BackgroundVideoComponent";
 import { FlappyPhaetonGameView } from "./components/FlappyPhaetonGameView";
@@ -7,7 +7,7 @@ import "./FlappyPhaeton.css";
 const background = require("../../assets/black.png");
 
 export const FlappyPhaetonView = (props: any) => {
-    const playerHighScore = parseInt(localStorage.getItem("phaetonHighScore") ? localStorage.getItem("phaetonHighScore") as string : " ");
+    const [ playerHighScore, setPlayerHighScore ] = useState(parseInt(localStorage.getItem("phaetonHighScore") ? localStorage.getItem("phaetonHighScore") as string : " "));
     const history = useHistory();
 
     return (
@@ -26,7 +26,10 @@ export const FlappyPhaetonView = (props: any) => {
             <div className="score" style={{ marginTop: "-5vh" }}>
                 <p className="score-item">{isNaN(playerHighScore) ? "" : `Personal best: ${playerHighScore}`}</p>
             </div>
-            <FlappyPhaetonGameView />
+            <FlappyPhaetonGameView onHighScoreChangeCallback={(value) => {
+                setPlayerHighScore(value);
+                localStorage.setItem("phaetonHighScore", "" + value);
+            }} />
         </div>
     );
 }

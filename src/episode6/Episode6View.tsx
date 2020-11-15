@@ -18,7 +18,8 @@ export const Episode6View = () => {
             <div>
                 <button className="Episode Episode-Six" onClick={() => history.push("/cookbook")}>BAUCIS AND PHILEMON'S <br/> COOKBOOK</button>
             </div>
-            <button className="Episode Episode-Six" onClick={() => history.push("/behind-the-scenes/6")}>BEHIND THE SCENES</button>
+            {/* <button className="Episode Episode-Six" onClick={() => history.push("/behind-the-scenes/6")}>BEHIND THE SCENES</button> */}
+            <p style={{ marginTop: "3vmin", fontSize: "1.5rem" }}> Behind the scenes coming soon... </p>
         </EpisodeComponent>
     );
 }
