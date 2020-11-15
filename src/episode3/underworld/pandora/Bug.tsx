@@ -27,6 +27,7 @@ export const Bug = (props: IBugProps) => {
             src={bugAssets[props.bugType]} 
             style={{ left: props.x + "%", top: props.y + "%", animationName: "Bug-Hover-" + props.animNum }} 
             onClick={props.onClick}
+            alt={"Bug-" + props.bugType}
         />
     )
 }

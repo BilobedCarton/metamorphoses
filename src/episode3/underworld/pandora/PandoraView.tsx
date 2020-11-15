@@ -69,7 +69,7 @@ const bugStep = (bug: IBugInfo) => {
 
     bug.timeSinceClick += TIME_INTERVAL;
 
-    if(bug.x == 50 && bug.y >= 80) bug.isTrapped = true;
+    if(bug.x === 50 && bug.y >= 80) bug.isTrapped = true;
 
     return bug;
 }
@@ -103,10 +103,10 @@ export const PandoraView = (props: any) => {
         switch(gameState) {
             case GameState.Start:
             case GameState.Won:
-                return <img className="Pandora-Box Pandora-Box-Closed" src={closedBox} onClick={() => setGameState(GameState.InProgress)}/>
+                return <img className="Pandora-Box Pandora-Box-Closed" src={closedBox} onClick={() => setGameState(GameState.InProgress)} alt="Closed Box"/>
             case GameState.InProgress:
             case GameState.Lost:
-                return <img className="Pandora-Box Pandora-Box-Open" src={openBox}/>
+                return <img className="Pandora-Box Pandora-Box-Open" src={openBox} alt="Open Box"/>
         }
     }
 
@@ -117,7 +117,7 @@ export const PandoraView = (props: any) => {
             case GameState.InProgress:
                 return <p className="Pandora-Guide-Text"> Click the bugs to make them return to the box, but watch out, they may not be as obedient as they seem. </p>;
             case GameState.Won:
-                return <p className="Pandora-Victory-Text">Congratulations! You've helped Pandora return evil to the box. </p>
+                return <p className="Pandora-Victory-Text">Congratulations! You've helped Pandora return evil to her box. </p>
         }
     }
 
@@ -125,8 +125,9 @@ export const PandoraView = (props: any) => {
 
     return (
         <div className="Pandora-Game-Container">
-            { gameState === GameState.InProgress || gameState === GameState.Lost ? <img className="Pandora-Stars" src={stars}/> : null }
-            <img className="Pandora-Figure" src={pandora} />
+            { gameState === GameState.InProgress || gameState === GameState.Lost ? <img className="Pandora-Stars" src={stars} alt="stars"/> : null }
+            <img className="Pandora-Figure" src={pandora} alt="Pandora"/>
+            {getVictoryText()}
             {
                 _.map(bugList, (bug, idx) => {
                     if(bug.isTrapped) return null;
@@ -147,7 +148,6 @@ export const PandoraView = (props: any) => {
                 })
             }
             { renderBox() }
-            {getVictoryText()}
         </div>
     )
 }

@@ -6,8 +6,9 @@
 }
 
 .Scores-Personal {
+    font-size: max(1rem, min(2.5vmin, 1.75rem));
     margin-top: 15vh;
-    font-size: large;
+    /* font-size: large; */
 }
 
 .Scores-Name-Input {
@@ -31,11 +32,12 @@
 
 .Score-Entry {
     position: relative;
-    font-size: min(3vmin, 1.5rem);
-    width: 250px;
+    font-size: max(min(3vmin, 1.5rem), 0.8rem);
+    width: 30%;
+    min-width: 150px;
     min-height: 1.5rem;
     height: 3vmin;
-    margin-left: -125px;
+    margin-left: min(-15%, -75px);
     left: 50%;
     line-height: 1;
     margin-top: 1vmin;

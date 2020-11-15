@@ -1,4 +1,3 @@
-import { on } from "process";
 import React, { useEffect, useState } from "react";
 import "./sisyphus.css";
 import { SisyphusAndRock } from "./SisyphusAndRock";
@@ -102,7 +101,7 @@ export const SisyphusView = (props: any) => {
                 { renderText() }
             </div>
             <SisyphusAndRock position={sisyphusPosition}/>
-            <img className="sis-hill" src={hill}/>
+            <img className="sis-hill" src={hill} alt="hill"/>
         </div>
     );
 }

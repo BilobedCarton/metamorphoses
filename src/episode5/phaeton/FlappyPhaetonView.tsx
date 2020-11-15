@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router";
 import { BackgroundImageComponent } from "../../shared/components/BackgroundVideoComponent";
 import { FlappyPhaetonGameView } from "./components/FlappyPhaetonGameView";
@@ -18,6 +18,11 @@ export const FlappyPhaetonView = (props: any) => {
                 onClick={() => history.push("/episode-five")}
                 style={{ position: "fixed", left: "5vh", top: "5vw" }}
             > Quit </button>
+            <button 
+                className="Episode Episode-Five" 
+                onClick={() => history.push("/scores")}
+                style={{ position: "fixed", right: "5vh", top: "5vw" }}
+            > High Scores </button>
             <div className="score" style={{ marginTop: "-5vh" }}>
                 <p className="score-item">{isNaN(playerHighScore) ? "" : `Personal best: ${playerHighScore}`}</p>
             </div>

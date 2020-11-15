@@ -17,15 +17,16 @@ export const DirectorNoteView = (props: any) => {
                     and to our natural and world. With water as a key actor in the play,
                     a mutable, inconstant, and healing element, the canonical myths of
                     Metamorphoses are given new life through each production, each
-                    production it’s own adaptation.
+                    production its own adaptation.
                     <br/>
                     <br/>
-                    Through a feminist lens, Zimmerman choses to place this series of
+                    Through a feminist lens, Zimmerman chooses to place this series of
                     vignettes within the hands of women narrators. By having women
                     tell stories previously dictated by men, she invites the audience to
                     view this story through a woman’s perspective. However, the need
                     for queer theatre stems from the destruction of the gender binary
-                    which the patriarchy relies on to suppress queer, trans, and nonbinary people. As a queer artist, it was vital that this canonical text,
+                    which the patriarchy relies on to suppress queer, trans, and nonbinary people. 
+                    As a queer artist, it was vital that this canonical text,
                     so rooted in patriarchal ideology, was brought to life by the unique
                     experiences of LGBTQIA+ artists.
                     <br/>

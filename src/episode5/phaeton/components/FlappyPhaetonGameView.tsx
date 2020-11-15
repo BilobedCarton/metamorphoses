@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router";
 import { PlayerVictoryStatus, IBirdState, startingBirdState, startingDist, startingHorizSpeed, maxY, halfGapHeight, generateText, gravity, maxV, maxX, jumpV } from "../domain/PhaetonConstants";
 import { ObstacleComponent } from "./ObstacleComponent";
 import { PhaetonComponent } from "./PhaetonComponent";
@@ -21,8 +20,6 @@ export const FlappyPhaetonGameView = (props: any) => {
     const [ distanceToFirstObstacle, setDistanceToFirstObstacle ] = useState(startingDist - 50);
     const [ horizontalSpeed, setHorizontalSpeed ] = useState(startingHorizSpeed);
     const [ scoredClosestObstacle, setScoredClosestObstacle ] = useState(false);
-
-    const history = useHistory();
 
     // check if the user has played before
     const playerHighScore = localStorage.getItem("phaetonHighScore") ? parseInt(localStorage.getItem("phaetonHighScore") as string) : NaN;

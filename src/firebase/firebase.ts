@@ -115,7 +115,7 @@ class Firebase {
 
     ep5ScoreEntries = (onDatabaseRequestCompleteCallback: (data: ScoreMetadata[]) => void) => {
         this.ep5ScoreEntryRefs().on("value", snapshot => {
-            console.log(snapshot.val());
+            // console.log(snapshot.val());
             const data = _.reduce(snapshot.val() as Record<string, any>, (acc, v) => {
                 acc.push({
                     name: v.name as string,

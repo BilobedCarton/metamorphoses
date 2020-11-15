@@ -26,8 +26,8 @@ export const SisyphusAndRock = (props: ISisyphusAndRockProps) => {
 
     return (
         <div className={"sis-container " + getClassNameFromPosition()}>
-            <img className={"sis-figure " + getClassNameFromPosition() + "-figure"} src={sisyphus}/>
-            <img className={"sis-rock " + getClassNameFromPosition() + "-rock"} src={rock}/>
+            <img className={"sis-figure " + getClassNameFromPosition() + "-figure"} src={sisyphus} alt="Sisyphus"/>
+            <img className={"sis-rock " + getClassNameFromPosition() + "-rock"} src={rock} alt="Rock"/>
         </div>
     )
 }

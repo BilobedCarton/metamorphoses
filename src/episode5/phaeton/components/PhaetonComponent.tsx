@@ -10,6 +10,6 @@ type IPhaetonComponentProps = {
 
 export const PhaetonComponent = (props: IPhaetonComponentProps) => {
     return (
-        <img className="bird" src={chariot} style={{top: props.posY + "px", left: props.posX + "px"}}/>
+        <img className="bird" src={chariot} style={{top: props.posY + "px", left: props.posX + "px"}} alt="Phaeton"/>
     )
 }

@@ -21,7 +21,7 @@ export const BiosView = (props: any) => {
     return (
         <ProgramViewContainer>
             <p> BIOS GO HERE </p>
-            <img src={`https://drive.google.com/uc?export=view&id=${headshots["somaiya"]}`} width="300" height="300"/>
+            <img src={`https://drive.google.com/uc?export=view&id=${headshots["somaiya"]}`} width="300" height="300" alt="Somaiya"/>
         </ProgramViewContainer>
     );
 }
