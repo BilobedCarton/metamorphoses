@@ -43,6 +43,10 @@
     margin-left: calc(3 / 14 * -100%);
 }
 
+.Pandora-Box-Open {
+    pointer-events: none;
+}
+
 .Pandora-Guide-Text {
     position: absolute;
     left: 2%;

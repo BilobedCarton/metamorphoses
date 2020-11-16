@@ -13,7 +13,7 @@ export const Episode5View = (props: any) => {
             backgroundIsVideo={false}
             backgroundSrc={background}
             videoTitle={"Episode 5"}
-            videoSrc={"https://player.vimeo.com/video/76979871"}
+            videoSrc={"https://player.vimeo.com/video/479637045"}
             episodeNumber={5}    
         >
             <b style={{textAlign: "center", fontSize: "large", lineHeight: 1}}>

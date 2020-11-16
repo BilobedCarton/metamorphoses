@@ -11,7 +11,7 @@ export const Episode2View = () => {
             backgroundIsVideo={true}
             backgroundSrc={background}
             videoTitle={"Episode 2"}
-            videoSrc={"https://player.vimeo.com/video/76979871"}
+            videoSrc={"https://player.vimeo.com/video/479624195"}
             episodeNumber={2}    
         >
             <ContextualEp2InteractiveComponent/>

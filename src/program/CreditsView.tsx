@@ -11,8 +11,8 @@ export const CreditsView = (props: any) => {
 
     return (
         <div>
-            {/* <button className="Program-Button" style={{ position: "absolute", left: "unset", right: "0vw", top: "0vh" }} onClick={() => history.push("/bios")}> BIOS </button> */}
-            <ProgramViewContainer style={{ height: "240vh", minHeight: "2500px" }}>
+            <button className="Program-Button" style={{ position: "absolute", left: "unset", right: "0vw", top: "0vh" }} onClick={() => history.push("/program")}> PROGRAM </button>
+            <ProgramViewContainer style={{ height: "240vh", minHeight: "2600px" }}>
                 <div className="Credits">
                     <p className="Credits-Text-Medium">
                         NORTHEASTERN UNVIERSITY
@@ -139,7 +139,7 @@ export const CreditsView = (props: any) => {
                                 Costume Assistant <br/> <br/>
                                 Scene Shop <br/> <br/> <br/> <br/>
                                 Costume Shop <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
-                                Headshot Photography <br/> <br/>
+                                Headshot Photography <br/> <br/> <br/>
                                 Production Marketing <br/> <br/>
                                 Production Coordinator <br/> <br/>
                                 Technical Director <br/> <br/>
@@ -166,7 +166,8 @@ export const CreditsView = (props: any) => {
                                 Jake Peterson <br/>
                                 Brenna Thornton <br/>
                                 Lindsy Weaver <br/> <br/>
-                                Shira Weiss <br/> <br/>
+                                Shira Weiss <br/> 
+                                Meryl Prendergast <br/> <br/>
                                 Amanda Brea &amp; Sydney Fells <br/> <br/>
                                 Herbert Moore <br/> <br/>
                                 Mätthew Williams <br/> <br/>
@@ -182,12 +183,14 @@ export const CreditsView = (props: any) => {
                             Pablo Hernandez Basulto <br/>
                             Kate &amp; John Brigham <br/>
                             Dianna Bronchuk <br/>
-                            Hyacinthe Joassainte &amp; the CAMD Media Studios <br/>
+                            Hyacinthe Joassainte <br/>
                             Nancy Kindelan <br/>
                             Abby Noniewicz <br/>
                             Tim Ouillette <br/>
-                            Janice Stetz &amp; the Forest Hills Cemetary Staff <br/>
+                            Janice Stetz <br/>
                             Vienna Volinsky <br/>
+                            CAMD Media Studios <br/>
+                            Forest Hills Cemetary Staff <br/>
                         </p>
                     </div>
                 </div>

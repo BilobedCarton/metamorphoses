@@ -12,7 +12,7 @@ export const Episode3View = (props: any) => {
             backgroundIsVideo={true}
             backgroundSrc={background}
             videoTitle={"Episode 3"}
-            videoSrc={"https://player.vimeo.com/video/76979871"}
+            videoSrc={"https://player.vimeo.com/video/479634563"}
             episodeNumber={3}    
         >
             <button className="Episode Episode-Three" onClick={() => history.push("/underworld")}>ENTER THE <b style={{ fontWeight: "bolder"}}>UNDERWORLD</b></button>

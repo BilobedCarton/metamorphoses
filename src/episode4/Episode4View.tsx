@@ -99,7 +99,7 @@ export const Episode4View = () => {
             backgroundIsVideo={true}
             backgroundSrc={background}
             videoTitle={"Episode 4"}
-            videoSrc={"https://player.vimeo.com/video/76979871"}
+            videoSrc={"https://player.vimeo.com/video/479650473"}
             episodeNumber={4}    
         >
             {progress !== EffectState.INITIAL ? renderEffectState() : renderInitial()}

@@ -40,6 +40,7 @@ export function HubView(props: any) {
                 <p style={{ margin: "0vmin"}}>DIRECTED BY <b>DESIR&Eacute; BENNETT</b></p>
                 <p style={{ margin: "0vmin"}}>BASED ON <b>THE MYTHS OF OVID</b></p>
                 <p style={{ margin: "0vmin"}}>NORTHEASTERN UNIVERSITY <b>DEPARTMENT OF THEATRE</b></p>
+                <p style={{ margin: "0vmin", fontSize: "min(1.4vmin, 1.3rem)" }}> Notice something wrong? Email <a style={{ color: "lightblue" }} href="mailto:hosking.m@notheastern.edu"> hosking.m@northeastern.edu </a></p>
             </div>
             <div className="Program-Button-Container">
                 <button className="Program-Buttons" onClick={() => history.push("/director-note")}>DIRECTOR'S NOTE</button>

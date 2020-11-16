@@ -78,7 +78,7 @@ function App() {
             <Route exact path={"/nightmares"}>
               <ContextualNightmareView/>
             </Route>
-            <Route exact path={"/bios"}>
+            <Route exact path={"/program"}>
               <BiosView/>
             </Route>
             <Route exact path={"/scores"}>

@@ -42,8 +42,9 @@ const generateBug = (): IBugInfo => {
     }
 }
 
-const BUG_STEP = 0.5;
-const TIME_INTERVAL = 100;
+const BUG_STEP = 1;
+const TIME_INTERVAL = 200;
+const NUM_BUGS = 7;
 
 const bugStep = (bug: IBugInfo) => {
     const target = { 
@@ -77,9 +78,9 @@ const bugStep = (bug: IBugInfo) => {
 export const PandoraView = (props: any) => {
     const [ gameState, setGameState ] = useState<GameState>(GameState.Start);
     const [ bugList, setBugList ] = useState<IBugInfo[]>([]);
-    const [ bugCount, setBugCount ] = useState(8);
+    const [ bugCount, setBugCount ] = useState(NUM_BUGS);
 
-    if(bugList.length < 9 && gameState === GameState.InProgress) {
+    if(bugList.length < NUM_BUGS + 1 && gameState === GameState.InProgress) {
         setBugList((list) => [...list, generateBug()]);
     }
 

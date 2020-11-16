@@ -9,16 +9,23 @@ export const CookbookView = (props: any) => {
     return (
         <div>
             <BackgroundVideoComponent src={background}  backgroundColor={"seashell"}/>
-            <div><button 
-                style = {{ marginTop: "5vh" }}
-                className="Episode Episode-Six" 
-                onClick={() => history.push("/episode-six")}
-            >EPISODE 6</button></div>
+            <div>
+                <button 
+                    style = {{ marginTop: "5vh" }}
+                    className="Episode Episode-Six" 
+                    onClick={() => history.push("/episode-six")}
+                >EPISODE 6</button>
+                <button 
+                    style = {{ marginTop: "5vh" }}
+                    className="Episode Episode-Six" 
+                    onClick={() => history.push("/")}
+                >HOME</button>
+            </div>
             <iframe 
                 title="Cookbook"
                 allowFullScreen 
                 allow="fullscreen" 
-                style={{ border: "none", width: "70vmin", height: "70vmin" }} 
+                style={{ border: "none", width: "70vmin", height: "70vmin", marginTop: "3vh" }} 
                 src="//e.issuu.com/embed.html?backgroundColor=%00000000&backgroundColorFullscreen=%00000000&d=meta_cookbook&hideIssuuLogo=true&hideShareButton=true&pageNumber=1&u=erinmsolomon">
             </iframe>
         </div>

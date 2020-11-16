@@ -14,7 +14,7 @@ export const DirectorNoteView = (props: any) => {
                     central human experiences of love, loss, and the transformation one
                     undergoes in the interim. This adaptation of Ovid’s allows us the
                     opportunity to analyze our relationships to our identity, to each other,
-                    and to our natural and world. With water as a key actor in the play,
+                    and to our natural world. With water as a key actor in the play,
                     a mutable, inconstant, and healing element, the canonical myths of
                     Metamorphoses are given new life through each production, each
                     production its own adaptation.

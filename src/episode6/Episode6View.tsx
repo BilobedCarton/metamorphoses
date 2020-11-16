@@ -12,7 +12,7 @@ export const Episode6View = () => {
             backgroundIsVideo={true}
             backgroundSrc={background}
             videoTitle={"Episode 6"}
-            videoSrc={"https://player.vimeo.com/video/76979871"}
+            videoSrc={"https://player.vimeo.com/video/479639144"}
             episodeNumber={6}    
         >
             <div>
